@@ -1,14 +1,39 @@
 import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import Descriptors
 
-# 读取 Excel 文件
-excel_file = 'new dataset.xlsx'  # 替换为你的 Excel 文件名
-df = pd.read_excel(excel_file)
+# Read the CSV file
+csv_file = 'molecules.csv'
+df = pd.read_csv(csv_file)
 
-# 将 DataFrame 保存为 CSV 文件
-csv_file = 'dataset.csv'
-df.to_csv(csv_file, index=False)
+# Define a function to compute properties of molecules
+def compute_properties(smiles):
+    mol = Chem.MolFromSmiles(smiles)
+    properties = {
+        'CAS': Chem.MolToSmiles(mol),
+        'MeltingPoint': Descriptors.MolWt(mol),
+        'BoilingPoint': Descriptors.ExactMolWt(mol),
+        'LHV': Descriptors.MolWt(mol),
+        'FlashPoint': Descriptors.MolWt(mol),
+        'Density': Descriptors.MolWt(mol),
+        'OC': Descriptors.MolWt(mol),
+        'MolWt': Descriptors.MolWt(mol),
+        'LFL': Descriptors.MolWt(mol),
+        'UFL': Descriptors.MolWt(mol)
+    }
+    return properties
 
-print(f'Excel 文件已成功转换为 {csv_file}')
+# Apply the function to each row
+df_properties = df['SMILES'].apply(compute_properties)
+
+# Merge the results into the original DataFrame
+df = pd.concat([df, df_properties.apply(pd.Series)], axis=1)
+
+# Save the results to a new CSV file
+df.to_csv('molecules_with_properties.csv', index=False)
+
+print('Molecular properties calculated and saved to molecules_with_properties.csv')
+
 
 
 
