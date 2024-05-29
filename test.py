@@ -1,5 +1,6 @@
+import deepchem
 from xgboost import XGBClassifier, XGBRegressor
-print(@k)
+
 # For classification
 model = XGBClassifier()
 
