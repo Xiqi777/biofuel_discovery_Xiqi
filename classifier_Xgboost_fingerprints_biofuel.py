@@ -3,14 +3,14 @@ from rdkit import Chem
 from rdkit.Chem import Descriptors
 
 # Read the CSV file
-csv_file = 'molecules.csv'
+csv_file = 'new dataset.csv'
 df = pd.read_csv(csv_file)
 
 # Define a function to compute properties of molecules
 def compute_properties(smiles):
     mol = Chem.MolFromSmiles(smiles)
     properties = {
-        'CAS': Chem.MolToSmiles(mol),
+        'CAS Number': Chem.MolToSmiles(mol),
         'MeltingPoint': Descriptors.MolWt(mol),
         'BoilingPoint': Descriptors.ExactMolWt(mol),
         'LHV': Descriptors.MolWt(mol),
@@ -30,9 +30,9 @@ df_properties = df['SMILES'].apply(compute_properties)
 df = pd.concat([df, df_properties.apply(pd.Series)], axis=1)
 
 # Save the results to a new CSV file
-df.to_csv('molecules_with_properties.csv', index=False)
+df.to_csv('new molecules_with_properties.csv', index=False)
 
-print('Molecular properties calculated and saved to molecules_with_properties.csv')
+print('Molecular properties calculated and saved to new molecules_with_properties.csv')
 
 
 
