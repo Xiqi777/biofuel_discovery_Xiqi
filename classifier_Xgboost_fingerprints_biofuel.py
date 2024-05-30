@@ -1,38 +1,55 @@
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Descriptors
+from rdkit.Chem import Crippen
+from rdkit.Chem import rdMolDescriptors
+import os
 
-# Read the CSV file
-csv_file = 'new dataset.csv'
+# 读取 CSV 文件
+csv_file = 'molecules.csv'
 df = pd.read_csv(csv_file)
 
-# Define a function to compute properties of molecules
+# 定义一个函数来计算分子的某些性质
 def compute_properties(smiles):
     mol = Chem.MolFromSmiles(smiles)
-    properties = {
-        'CAS Number': Chem.MolToSmiles(mol),
-        'MeltingPoint': Descriptors.MolWt(mol),
-        'BoilingPoint': Descriptors.ExactMolWt(mol),
-        'LHV': Descriptors.MolWt(mol),
-        'FlashPoint': Descriptors.MolWt(mol),
-        'Density': Descriptors.MolWt(mol),
-        'OC': Descriptors.MolWt(mol),
-        'MolWt': Descriptors.MolWt(mol),
-        'LFL': Descriptors.MolWt(mol),
-        'UFL': Descriptors.MolWt(mol)
-    }
-    return properties
+    if mol is None:
+        print(f'Error: Invalid SMILES string encountered: {smiles}')
+        return None
+    else:
+        properties = {
+            'CAS': Chem.MolToSmiles(mol),  # Placeholder for CAS number
+            'MolWt': Descriptors.MolWt(mol),
+            'ExactMolWt': Descriptors.ExactMolWt(mol),
+            'LogP': Crippen.MolLogP(mol),
+            'NumHDonors': Descriptors.NumHDonors(mol),
+            'NumHAcceptors': Descriptors.NumHAcceptors(mol),
+            'NumRotatableBonds': Descriptors.NumRotatableBonds(mol),
+            'TPSA': rdMolDescriptors.CalcTPSA(mol),
+            'MolVolume': Descriptors.MolMR(mol)  # Molecular volume can be approximated by the molar refractivity
+        }
+        print(f'Properties for {smiles}: {properties}')
+        return properties
 
-# Apply the function to each row
+# 应用该函数到每一行
 df_properties = df['SMILES'].apply(compute_properties)
 
-# Merge the results into the original DataFrame
+# 检查计算结果
+print(df_properties.head())
+
+# 将结果合并到原始 DataFrame 中
 df = pd.concat([df, df_properties.apply(pd.Series)], axis=1)
 
-# Save the results to a new CSV file
-df.to_csv('new molecules_with_properties.csv', index=False)
+# 确保输出文件夹存在
+output_folder = 'output'
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
-print('Molecular properties calculated and saved to new molecules_with_properties.csv')
+# 保存结果到新的 CSV 文件
+output_file = os.path.join(output_folder, 'molecules_properties.csv')
+df.to_csv(output_file, index=False)
+
+print(f'Molecular properties calculated and saved to {output_file}')
+
 
 
 
