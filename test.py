@@ -17,7 +17,6 @@ def compute_properties(smiles):
         return None
     else:
         properties = {
-            'CAS': Chem.MolToSmiles(mol),  # Placeholder for CAS number
             'MolWt': Descriptors.MolWt(mol),
             'ExactMolWt': Descriptors.ExactMolWt(mol),
             'LogP': Crippen.MolLogP(mol),
@@ -45,7 +44,7 @@ if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
 # Save the results to a new CSV file
-output_file = os.path.join(output_folder, 'molecules_properties.csv')
+output_file = os.path.join(output_folder, 'molecules_properties11.csv')
 df.to_csv(output_file, index=False)
 
 print(f'Molecular properties calculated and saved to {output_file}')

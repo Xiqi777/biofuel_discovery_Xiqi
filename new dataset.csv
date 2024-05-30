@@ -1,330 +1,343 @@
-Name,SMILES,Type
-Ethanol,CCO,biofuel
-2-propanol,CC(C)O,biofuel
-1-Propanol,CCCO,biofuel
-2-butanol,CCC(C)O,biofuel
-1-butanol,CCCCO,biofuel
-Propane,CCC,biofuel
-Octane,CCCCCCCC,biofuel
-"1,2-Propanediol",OCCO,biofuel
-2-Methylpropane,CC(C)C,biofuel
-1-Butene,C=CCC,biofuel
-2-Butene,CC=CC,biofuel
-1-Pentene,C=CCCC,biofuel
-1-Hexene,C=CCCCC,biofuel
-cis-2-hexene ,C/C=C\CCCC,biofuel
-2-Methyl-1-butene,C=C(C)CC,biofuel
-3-Methyl-1-butene,CC=C(C)C,biofuel
-2-Methyl-2-butene,CC=C(C)C,biofuel
-2-Methylpropene,C=C(C)C,biofuel
-1-Octene,C=CCCCCCC,biofuel
-2-Octene,CC=CCCCCCC,biofuel
-1-Heptene,C=CCCCCC,biofuel
-2-Heptene,CC=CCCCC,biofuel
-3-Heptene,CCC=CCCC,biofuel
-2-Pentanone,CCC(C)C=O,biofuel
-2-Butanone,CC(C)C=O,biofuel
-2-Methyl-1-propanol,CC(C)CO,biofuel
-2-Methylfuran,Cc1ccco1,biofuel
-3-Pentanone,CCC(=O)CC,biofuel
-Isopropyl acetate,CC(=O)OC(C)C,biofuel
-Methyl isobutyrate,COC(=O)C(C)C,biofuel
-4-Methyl-2-pentanol,CC(C)C(C)C(C)O,biofuel
-"1,1-Dimethylcyclohexane",CC1(C)CCCCC1,biofuel
-"1,1-Dimethylcyclopentane",CC1(C)CCCC1,biofuel
-Cyclopentane,C1CCCC1,biofuel
-2-Methyl-1-Pentene,C=CCCCC(C)C,biofuel
-cyclopentanone,O=C1CCCC1,biofuel
-2-Methyl-2-Pentene,CC(C)=CC(C)C,biofuel
-3-methyl-2-pentene,CC(C)=CC(C)C,biofuel
-2-Methyl-3-ethylpentane,CCC(CC)C(C)C,biofuel
-2-Methyl-3-Heptene,CCC(C)=CC(C)C,biofuel
-2-Methyl-3-Hexene,CCC(C)=CC(C)C,biofuel
-2-Methylnonane,CCCCCCC(C)CC,biofuel
-3-Methylnonane,CCCCCCC(C)CCC,biofuel
-4-Methylnonane,CCCCC(C)CCCC,biofuel
-5-Methylnonane,CCCCCC(C)CCC,biofuel
-"2,2,3,3-tetramethylpentane",CC(C)(C)CC(C)(C)C(C)(C)C,biofuel
-"2,2-dimethyl-3-ethylpentane",CCC(C)(CC)C(C)(C)C,biofuel
-"2,2-dimethylbutane",CC(C)(C)CC(C)(C)C,biofuel
-"2,4-Dimethyl-3-ethylpentane",CCC(C)(CC)C(C)(C)C,biofuel
-"2,3-dimethylbutane",CC(C)C(C)C(C)C,biofuel
-"2,2,3-trimethylbutane",CC(C)(C)C(C)(C)C(C)(C)C,biofuel
-"2,2-Dimethylpropane",CC(C)(C)C,biofuel
-2-methylpentane,CCC(C)C(C)C,biofuel
-3-methylpentane,CCC(C)CC(C)C,biofuel
-3-Hexene,C=CCC(C)C,biofuel
-3-methyl-1-pentene,C=CCCC(C)C,biofuel
-2-ethyl-1-butene,C=CC(C)CC,biofuel
-"2,3-dimethyl-1-butene",CC(C)=CC(C)C,biofuel
-"3,3-dimethyl-1-butene",C=C(C)C(C)(C)C,biofuel
-"2,3-dimethyl-2-butene",CC(C)=C(C)C,biofuel
-4-methyl-1-hexene,C=CCC(C)CC,biofuel
-"2,3,3-trimethyl-1-butene",C=C(C)C(C)(C)C,biofuel
-2-Methyl-1-hexene,C=CC(C)CC,biofuel
-2-Methyl-2-hexene,CC=C(C)CC,biofuel
-2-Methyl-3-hexene,CCC=C(C)C,biofuel
-"2,3-Dimethyl-1-pentene",CCC(C)C=C(C)C,biofuel
-2-Methyl-2-propanol,CC(C)(C)O,biofuel
-3-methyl-1-butanol,CCC(C)CO,biofuel
-methyl tert-butyl ether,COC(C)(C)C,biofuel
-Tert-Amyl methyl ether,COCC(C)(C)C,biofuel
-tert-butyl ethyl ether,COCC(C)(C)C,biofuel
-benzene,c1ccccc1,biofuel
-toluene,Cc1ccccc1,biofuel
-styrene,C=CCc1ccccc1,biofuel
-4-Methyl-1-Hexene,C=CCC(C)CC,biofuel
-4-Methyl-1-Pentene,C=CCC(C)C,biofuel
-4-Methyl-2-Pentene,CC=CC(C)C,biofuel
-4-Methylheptane,CCCC(C)CCC,biofuel
-4-Octene,CCCC=CCCC,biofuel
-"1,2-dimethylbenzene (o-xylene)",Cc1ccccc1C,biofuel
-"1,3-dimethylbenzene (m-Xylene)",Cc1cccc(C)c1,biofuel
-"1,4-dimethylbenzene (p-Xylene)",Cc1ccc(C)cc1,biofuel
-ethylbenzene,CCc1ccccc1,biofuel
-Indane,c1ccc2c(c1)CCC2,biofuel
-Propenylbenzene,C=CCc1ccccc1,biofuel
-n-propylbenzene,CCCc1ccccc1,biofuel
-"1,2,3-trimethylbenzene",Cc1cccc(C)c1C,biofuel
-"1,2,4-trimethylbenzene",Cc1ccc(C)c(C)c1,biofuel
-"1,3,5-trimethylbenzene",Cc1cc(C)cc(C)c1,biofuel
-"2,4-Dimethyl-2-pentene",C=CC(C)(C)C,biofuel
-"2,2,4-Trimethylpentane",CC(C)CC(C)(C)C,biofuel
-3-Methyl-2-butanone,CC(=O)C(C)C,biofuel
-"2,3,3-Trimethyl-1-Pentene",C=C(C)C(C)(C)C,biofuel
-"2,3,3-Trimethylpentane",CCC(C)(C)C(C)C,biofuel
-"2,3,4-Trimethyl-2-Pentene",C=CC(C)(C)C(C)C,biofuel
-"2,3,4-Trimethylpentane",CCC(C)(C)C(C)C,biofuel
-"2,4-Dimethyl-1-Pentene",C=CCC(C)C,biofuel
-"2,4-Dimethyl-2-Pentene",C=CC(C)(C)C,biofuel
-"2,4-Dimethyl-3-ethylpentane",CCC(C)C(C)C(C)C,biofuel
-"1,1-Dimethylcyclohexane",CC1(C)CCCCC1,biofuel
-"1,1-Dimethylcyclopentane",CC1(C)CCCCC1,biofuel
-Cyclopentane,CC1CCC(C)C1,biofuel
-"1,3-Dimethylcyclopentane",CC1CCC(C)C1,biofuel
-2-Methylpiperidine,CC1CCCCN1,biofuel
-2-Methylpyridine,Cc1ccccn1,biofuel
-3-Methylpyridine,Cc1cccnc1,biofuel
-4-Methylpyridine,Cc1ccncc1,biofuel
-Aniline,Nc1ccccc1,biofuel
-N-methylaniline,CNc1ccccc1,biofuel
-Indole,c1ccc2[nH]ccc2c1,biofuel
-Quinoline,c1ccc2ncccc2c1,biofuel
-Dibenzopyrrole,c1ccc2c(c1)[nH]c1ccccc12,biofuel
-Phenol,Oc1ccccc1,biofuel
-Anisole,COc1ccccc1,biofuel
-Benzyl alcohol,OCc1ccccc1,biofuel
-O-Cresol,Cc1ccccc1O,biofuel
-M-Cresol,Cc1cccc(O)c1,biofuel
-P-Cresol,Cc1ccc(O)cc1,biofuel
-Benzaldehyde,O=Cc1ccccc1,biofuel
-Phenetole,CCOc1ccccc1,biofuel
-4-Methylanisole,COc1ccc(C)cc1,biofuel
-1-Phenylethanol,CC(O)c1ccccc1,biofuel
-2-Phenylethanol ,OCCc1ccccc1,biofuel
-"2,4-Xylenol",Cc1ccc(O)c(C)c1,biofuel
-Cinnamaldehyde,O=CC=Cc1ccccc1,biofuel
-4-Propylanisole,CCCc1ccc(OC)cc1,biofuel
-Guaiacol,COc1ccccc1O,biofuel
-4-Methylguaiacol,COc1cc(C)ccc1O,biofuel
-4-Ethylguaiacol,CCc1ccc(O)c(OC)c1,biofuel
-Methylamine,CN,biofuel
-Ethylamine,CCN,biofuel
-3-Methyltetrahydrofuran,CC1CCOC1,not biofuel
-"5-Methyl-2,3-dihydrofuran",CC1=CCCO1,not biofuel
-2-Methyloxane,CC1CCCCO1,not biofuel
-2-Ethyloxane,CCC1CCCCO1,not biofuel
-3-Ethyloxane,CCC1CCCOC1,not biofuel
-4-Ethyloxane,CCC1CCOCC1,not biofuel
-"2,6-Dimethyloxane",CC1CCCC(C)O1,not biofuel
-"2,3,5-Trimethyltetrahydrofuran",CC1CC(C)C(C)O1,not biofuel
-2-Propyltetrahydrofuran,CCCC1CCCO1,not biofuel
-2-Propyloxane,CCCC1CCCCO1,not biofuel
-"2,3,4,5-Tetramethyltetrahydrofuran",CC1OC(C)C(C)C1C,not biofuel
-2-Isobutyltetrahydrofuran,CC(C)CC1CCCO1,not biofuel
-"2,5-Dimethoxytetrahydrofuran",COC1CCC(OC)O1,not biofuel
-"2,5-Dimethoxy-2,5-dihydrofuran",COC1C=CC(OC)O1,not biofuel
-"2,3-Dimethyltetrahydrofuran",CC1CCOC1C,not biofuel
-"2,5-Dimethyltetrahydrofuran",CC1CCC(C)O1,not biofuel
-"2,4-Dimethyltetrahydrofuran",CC1COC(C)C1,not biofuel
-2-Ethyltetrahydrofuran,CCC1CCCO1,not biofuel
-2-Methoxypropane,COC(C)C,not biofuel
-2-Methoxy-2-methylpropane,COC(C)(C)C,not biofuel
-tert-Amyl methylether,CCC(C)(C)OC,not biofuel
-2-Propoxypropane,CCCOC(C)C,not biofuel
-2-Isopropoxypropane,CC(C)OC(C)C,not biofuel
-tert-Amyl ethylether,CCOC(C)(C)CC,not biofuel
-"1,1-Dimethylethyl 2-methylpropanoate",CC(C)C(=O)OC(C)(C)C,not biofuel
-"2,2-Dimethylpropyl propanoate",CCC(=O)OCC(C)(C)C,not biofuel
-"1,3-Dimethylbutyl acetate",CC(=O)OC(C)CC(C)C,not biofuel
-"2,3-Dimethylbutyl acetate",CC(=O)OCC(C)C(C)C,not biofuel
-"1,1,2-Trimethylpropyl acetate",CC(=O)OC(C)(C)C(C)C,not biofuel
-"1,2,2-Trimethylpropyl acetate",CC(=O)OC(C)C(C)(C)C,not biofuel
-2-Methylpentyl formate,CCCC(C)COC=O,not biofuel
-"Methyl 2,2-dimethylpentanoate",CCCC(C)(C)C(=O)OC,not biofuel
-"Methyl 3,3-dimethylpentanoate",CCC(C)(C)CC(=O)OC,not biofuel
-"Ethyl 3,3-dimethylbutanoate",CCOC(=O)CC(C)(C)C,not biofuel
-"Ethyl 2,3-dimethylbutanoate",CCOC(=O)C(C)C(C)C,not biofuel
-1-Methylpropyl 2-methylpropanoate,CCC(C)OC(=O)C(C)C,not biofuel
-"Methyl 2,3-dimethylpentanoate",CCC(C)C(C)C(=O)OC,not biofuel
-"Methyl 2,4-dimethylpentanoate",COC(=O)C(C)CC(C)C,not biofuel
-"Methyl 3,4-dimethylpentanoate",COC(=O)CC(C)C(C)C,not biofuel
-"Ethyl 2,2-dimethylbutanoate",CCOC(=O)C(C)(C)CC,not biofuel
-"2,2-Dimethylcyclohexanone",CC1(C)CCCCC1=O,not biofuel
-"3,3-Dimethylcyclohexanone",CC1(C)CCCC(=O)C1,not biofuel
-"4,4-Dimethylcyclohexanone",CC1(C)CCC(=O)CC1,not biofuel
-"2,3-Dimethylcyclohexanone",CC1CCCC(=O)C1C,not biofuel
-"2,4-Dimethylcyclohexanone",CC1CCC(=O)C(C)C1,not biofuel
-"2,5-Dimethylcyclohexanone",CC1CCC(C)C(=O)C1,not biofuel
-"3,4,4-Trimethyl-2-pentanone",CC(=O)C(C)C(C)(C)C,not biofuel
-"2,2,4-Trimethyl-3-pentanone",CC(C)C(=O)C(C)(C)C,not biofuel
-"2,4-Dimethyl-3-hexanone",CCC(C)C(=O)C(C)C,not biofuel
-"2,5-Dimethyl-3-hexanone",CC(C)CC(=O)C(C)C,not biofuel
-"4,5-Dimethyl-3-hexanone",CCC(=O)C(C)C(C)C,not biofuel
-"3,3-Dimethyl-2-pentanone",CCC(C)(C)C(C)=O,not biofuel
-"4,4-Dimethyl-2-pentanone",CC(=O)CC(C)(C)C,not biofuel
-"3,4-Dimethyl-2-pentanone",CC(=O)C(C)C(C)C,not biofuel
-"2,4-Dimethyl-3-pentanone",CC(C)C(=O)C(C)C,not biofuel
-3-Ethyl-2-pentanone,CCC(CC)C(C)=O,not biofuel
-3-Hexanol,CCCC(O)CC,not biofuel
-"2,2-Dimethylpentanol",CCCC(C)(C)CO,not biofuel
-"3,3-Dimethylpentanol",CCC(C)(C)CCO,not biofuel
-"4,4-Dimethylpentanol",CC(C)(C)CCCO,not biofuel
-"2,3,3-Trimethylbutanol",CC(CO)C(C)(C)C,not biofuel
-2-Methyl-2-hexanol,CCCCC(C)(C)O,not biofuel
-3-Methyl-3-hexanol,CCCC(C)(O)CC,not biofuel
-2-Phenylpentane,CCCC(C)c1ccccc1,not biofuel
-tert-Amylbenzene,CCC(C)(C)c1ccccc1,not biofuel
-n-Decylbenzene,CCCCCCCCCCc1ccccc1,not biofuel
-1-Methyl-4-(Trans-1-n-Propenyl)Benzene,CC=Cc1ccc(C)cc1,not biofuel
-1-Methyl-4-allylbenzene,C=CCc1ccc(C)cc1,not biofuel
-2-Phenyl-1-Butene,C=C(CC)c1ccccc1,not biofuel
-"1,2,3,4-Tetrahydronaphthalene",c1ccc2c(c1)CCCC2,not biofuel
-2-Phenylpentane,CCCC(C)c1ccccc1,not biofuel
-tert-Amylbenzene,CCC(C)(C)c1ccccc1,not biofuel
-n-Decylbenzene,CCCCCCCCCCc1ccccc1,not biofuel
-"1,4-Diethylbenzene",CCc1ccc(CC)cc1,not biofuel
-"1,2-Dimethyl-3-ethylbenzene",CCc1cccc(C)c1C,not biofuel
-"1,3-Dimethyl-4-ethylbenzene",CCc1ccc(C)cc1C,not biofuel
-"1,3-Dimethyl-5-ethylbenzene",CCc1cc(C)cc(C)c1,not biofuel
-Indane (hydrindene),c1ccc2c(c1)CCC2,not biofuel
-cis-1-Propenylbenzene,CC=Cc1ccccc1,not biofuel
-trans-1-Propenylbenzene,CC=Cc1ccccc1,not biofuel
-2-Phenylpropene,C=C(C)c1ccccc1,not biofuel
-sec-Butylbenzene,CCC(C)c1ccccc1,not biofuel
-"1,4-Cyclohexadiene",C1=CCC=CC1,not biofuel
-"2-Methyl-1,5-Hexadiene",C=CCCC(=C)C,not biofuel
-"2-Methyl-2,4-Hexadiene",CC=CC=C(C)C,not biofuel
-"1-Methyl-1,4-cyclohexadiene",CC1=CCC=CC1,not biofuel
-"2,5-Dimethyl-1,5-hexadiene",C=C(C)CCC(=C)C,not biofuel
-"2,5-Dimethyl-2,4-hexadiene",CC(C)=CC=C(C)C,not biofuel
-"2,6-Octadiene",CC=CCCC=CC,not biofuel
-"2,6-Dimethyl-1,5-Heptadiene",C=C(C)CCC=C(C)C,not biofuel
-Dicyclopentadiene,C1=CC2C3C=CC(C3)C2C1,not biofuel
-"4-Ethynyl-4-vinyl-1,6-heptadiene",C#CC(C=C)(CC=C)CC=C,not biofuel
-1-Ethylcyclopentene,CCC1=CCCC1,not biofuel
-3-Ethylcyclopentene,CCC1C=CCC1,not biofuel
-Cycloheptene,C1=CCCCCC1,not biofuel
-"1,5,5-Trimethylcyclopentene",CC1=CCCC1(C)C,not biofuel
-1-Propylcyclopentene,CCCC1=CCCC1,not biofuel
-1-Ethylcyclohexene,CCC1=CCCCC1,not biofuel
-1-Methylcycloheptene,CC1=CCCCCC1,not biofuel
-Propadiene,C=C=C,not biofuel
-"1,2-Butadiene",C=C=CC,not biofuel
-"3-Methyl-1,2-butadiene",C=C=C(C)C,not biofuel
-"1,2-Pentadiene",C=C=CCC,not biofuel
-"1,4-Pentadiene",C=CCC=C,not biofuel
-"2,3-Pentadiene",CC=C=CC,not biofuel
-3-Ethyl-4-methyl-2-pentene,CC=C(CC)C(C)C,not biofuel
-"2,3,4-Trimethyl-2-pentene",CC(C)=C(C)C(C)C,not biofuel
-"3,4,4-Trimethyl-2-pentene",CC=C(C)C(C)(C)C,not biofuel
-"2-Ethyl-3,3-dimethyl-1-butene",C=C(CC)C(C)(C)C,not biofuel
-Cyclopropene,C1=CC1,not biofuel
-Cyclobutene,C1=CCC1,not biofuel
-3-Ethyl-2-methyl-1-pentene,C=C(C)C(CC)CC,not biofuel
-3-Ethyl-4-methyl-1-pentene,C=CC(CC)C(C)C,not biofuel
-"2,3,3-Trimethyl-1-pentene",C=C(C)C(C)(C)CC,not biofuel
-"2,3,4-trimethyl-1-pentene",C=C(C)C(C)C(C)C,not biofuel
-"2,4,4-Trimethyl-1-pentene",C=C(C)CC(C)(C)C,not biofuel
-"3,3,4-trimethyl-1-pentene",C=CC(C)(C)C(C)C,not biofuel
-"3,4,4-trimethyl-1-pentene",C=CC(C)C(C)(C)C,not biofuel
-"2,4,4-Trimethyl-2-pentene",CC(C)=CC(C)(C)C,not biofuel
-2-methylheptane,CCCCCC(C)C,not biofuel
-3-methylheptane,CCCCC(C)CC,not biofuel
-4-methylheptane,CCCC(C)CCC,not biofuel
-n-heptane,CCCCCCC,not biofuel
-n-hexane,CCCCCC,not biofuel
-3-Ethylhexane,CCCC(CC)CC,not biofuel
-2-Methyloctane,CCCCCCC(C)C,not biofuel
-"2,2-Dimethylheptane",CCCCCC(C)(C)C,not biofuel
-"2,2-dimethyloctane",CCCCCCC(C)(C)C,not biofuel
-cycloheptane,C1CCCCCC1,not biofuel
-n-Propylcyclopentane,CCCC1CCCC1,not biofuel
-n-propylcyclohexane,CCCCC1CCCCC1,not biofuel
-Pentane,CCCCC,not biofuel
-"1,3-Dimethylcyclopentane",CC1(C)CCCC1,not biofuel
-iso-Butylcyclohexane,CC(C)CC1CCCCC1,not biofuel
-Sec-Butylcyclohexane,CCC(C)C1CCCCC1,not biofuel
-"1,4-Dimethylcyclohexane",CC1(C)CCCCC1,not biofuel
-2-Methyl-1-Heptene,C=CCCCCCC(C)C,not biofuel
-"5,5-Dimethyl-2-hexene",CC=CCC(C)(C)C,not biofuel
-"2,2-Dimethyl-3-hexene",CCC=CC(C)(C)C,not biofuel
-"2,3-Dimethyl-3-hexene",CCC=C(C)C(C)C,not biofuel
-"2,4-Dimethyl-3-hexene",CCC(C)=CC(C)C,not biofuel
-"2,5-Dimethyl-3-hexene",CC(C)C=CC(C)C,not biofuel
-"2,4-Dimethyl-2-hexene",CCC(C)C=C(C)C,not biofuel
-"2,5-Dimethyl-2-hexene",CC(C)=CCC(C)C,not biofuel
-"3,4-Dimethyl-2-hexene",CC=C(C)C(C)CC,not biofuel
-"3,5-Dimethyl-2-hexene",CC=C(C)CC(C)C,not biofuel
-"4,4-Dimethyl-2-hexene",CC=CC(C)(C)CC,not biofuel
-"4,5-Dimethyl-2-hexene",CC=CC(C)C(C)C,not biofuel
-"2,4-Dimethyl-1-hexene",C=C(C)CC(C)CC,not biofuel
-"2,5-Dimethyl-1-hexene",C=C(C)CCC(C)C,not biofuel
-"3,4-Dimethyl-1-hexene",C=CC(C)C(C)CC,not biofuel
-"3,5-Dimethyl-1-hexene",C=CC(C)CC(C)C,not biofuel
-"4,5-Dimethyl-1-hexene",C=CCC(C)C(C)C,not biofuel
-"3,3-Dimethyl-1-hexene",C=CC(C)(C)CCC,not biofuel
-"4,4-Dimethyl-1-hexene",C=CCC(C)(C)CC,not biofuel
-"5,5-Dimethyl-1-hexene",C=CCCC(C)(C)C,not biofuel
-"2,3-Dimethyl-2-hexene",CCCC(C)=C(C)C,not biofuel
-2-methyl-2-heptene,CCCCC=C(C)C,not biofuel
-3-methyl-2-heptene,CC=C(C)CCCC,not biofuel
-4-methyl-2-heptene,CC=CC(C)CCC,not biofuel
-5-methyl-2-heptene,CC=CCC(C)CC,not biofuel
-6-methyl-2-heptene,CC=CCCC(C)C,not biofuel
-2-methyl-3-heptene,CCCC=CC(C)C,not biofuel
-3-methyl-3-heptene,CCCC=C(C)CC,not biofuel
-4-methyl-3-heptene,CCC=C(C)CCC,not biofuel
-5-methyl-3-heptene,CCC=CC(C)CC,not biofuel
-"2,3-Dimethyl-1-hexene",C=C(C)C(C)CCC,not biofuel
-Ethylcyclopentane,CCC1CCCC1,not biofuel
-"1,1-Dimethylcyclopentane",CC1(C)CCCC1,not biofuel
-"1,2-Dimethylcyclopentane",CC1CCCC1C,not biofuel
-"cis-1,3-Dimethylcyclopentane",CC1CCC(C)C1,not biofuel
-Isopropylcyclopentane,CC(C)C1CCCC1,not biofuel
-1-Ethyl-3-methylcyclopentane,CCC1CCC(C)C1,not biofuel
-"1,2-Dimethylcyclohexane",CC1CCCCC1C,not biofuel
-"1,3-Dimethylcyclohexane",CC1CCCC(C)C1,not biofuel
-"1,4-Dimethylcyclohexane",CC1CCC(C)CC1,not biofuel
-"1,1,2-Trimethylcyclohexane",CC1CCCCC1(C)C,not biofuel
-"1,1,3-Trimethylcyclohexane",CC1CCCC(C)(C)C1,not biofuel
-"1,2,3-Trimethylcyclohexane",CC1CCCC(C)C1C,not biofuel
-"1,2,4-Trimethylcyclohexane",CC1CCC(C)C(C)C1,not biofuel
-"1,3,5-Trimethylcyclohexane",CC1CC(C)CC(C)C1,not biofuel
-"1,1-Dimethylcycloheptane",CC1(C)CCCCCC1,not biofuel
-Ethylcycloheptane,CCC1CCCCCC1,not biofuel
-3-Ethylpentane,CCC(CC)CC,not biofuel
-"2,2,3-Trimethylbutane",CC(C)C(C)(C)C,not biofuel
-2-Methylheptane,CCCCCC(C)C,not biofuel
-"2,3-Dimethylhexane",CCCC(C)C(C)C,not biofuel
-"2,4-Dimethylhexane",CCC(C)CC(C)C,not biofuel
-"2,5-Dimethylhexane",CC(C)CCC(C)C,not biofuel
-"3,3-Dimethylhexane",CCCC(C)(C)CC,not biofuel
-"2,2-Dimethylhexane",CCCCC(C)(C)C,not biofuel
-"3,4-Dimethylhexane",CCC(C)C(C)CC,not biofuel
-3-Ethylhexane,CCCC(CC)CC,not biofuel
-"2,3-Dimethylpentane",CCC(C)C(C)C,not biofuel
-"2,4-Dimethylpentane",CC(C)CC(C)C,not biofuel
-3-Ethylpentane,CCC(CC)CC,not biofuel
-"2,2,3-Trimethylbutane",CC(C)C(C)(C)C,not biofuel
-2-Methylheptane,CCCCCC(C)C,not biofuel
+Name,SMILES,CAS,Type
+Ethanol,CCO,64-17-5,biofuel
+2-propanol,CC(C)O,67-63-0,biofuel
+1-Propanol,CCCO,71-23-8,biofuel
+2-butanol,CCC(C)O,78-92-2,biofuel
+1-butanol,CCCCO,71-36-3,biofuel
+Propane,CCC,74-98-6,biofuel
+Octane,CCCCCCCC,111-65-9,biofuel
+"1,2-Propanediol",CC(CO)O,57-55-6,biofuel
+2-Methylpropane,CC(C)C,75-28-5,biofuel
+1-Butene,CCC=C,106-98-9,biofuel
+2-Butene,CC=CC,107-01-7,biofuel
+1-Pentene,C=CCCC,109-67-1,biofuel
+1-Hexene,C=CCCCC,592-41-6,biofuel
+cis-2-hexene ,CCC/C=C\C,7688-21-3,biofuel
+2-Methyl-1-butene,CCC(=C)C,563-46-2,biofuel
+3-Methyl-1-butene,CC(C)C=C,563-45-1,biofuel
+2-Methyl-2-butene,CC=C(C)C,513-35-9,biofuel
+2-Methylpropene,CC(=C)C,115-11-7,biofuel
+1-Octene,C=CCCCCCC,111-66-0,biofuel
+2-Octene,CC=CCCCCCC,111-67-1,biofuel
+1-Heptene,C=CCCCCC,592-76-7,biofuel
+2-Heptene,CC=CCCCC,6443-92-1,biofuel
+3-Heptene,CCC=CCCC,592-78-9,biofuel
+2-Pentanone,CCC(C)C=O,107-87-9,biofuel
+2-Butanone,CC(C)C=O,78-93-3,biofuel
+2-Methyl-1-propanol,CC(C)CO,78-83-1,biofuel
+2-Methylfuran,CC1=CC=CO1,534-22-5,biofuel
+3-Pentanone,CCC(=O)CC,96-22-0,biofuel
+Isopropyl acetate,CC(C)OC(=O)C,108-21-4,biofuel
+Methyl isobutyrate,CC(C)C(=O)OC,547-63-7,biofuel
+4-Methyl-2-pentanol,CC(C)CC(C)O,108-11-2,biofuel
+"1,1-Dimethylcyclohexane",CC1(CCCCC1)C,590-66-9,biofuel
+"1,1-Dimethylcyclopentane",CC1(CCCC1)C,1638-26-2,biofuel
+Cyclopentane,C1CCCC1,287-92-3,biofuel
+2-Methyl-1-Pentene,CCCC(=C)C,763-29-1,biofuel
+cyclopentanone,C1CCC(=O)C1,120-92-3,biofuel
+2-Methyl-2-Pentene,CCC=C(C)C,625-27-4,biofuel
+3-methyl-2-pentene,CCC(=CC)C,922-61-2,biofuel
+2-Methyl-3-ethylpentane,CCC(CC)C(C)C,609-26-7,biofuel
+2-Methyl-3-Heptene,CCCC=CC(C)C,692-96-6,biofuel
+2-Methyl-3-Hexene,CCC=CC(C)C,692-24-0,biofuel
+2-Methylnonane,CCCCCCC(C)CC,871-83-0,biofuel
+3-Methylnonane,CCCCCCC(C)CCC,5911-04-6,biofuel
+4-Methylnonane,CCCCC(C)CCCC,17301-94-9,biofuel
+5-Methylnonane,CCCCC(C)CCCC,15869-85-9,biofuel
+"2,2,3,3-tetramethylpentane",CCC(C)(C)C(C)(C)C,7154-79-2,biofuel
+"2,2-dimethyl-3-ethylpentane",CCC(CC)C(C)(C)C,16747-32-3,biofuel
+"2,2-dimethylbutane",CCC(C)(C)C,75-83-2,biofuel
+"2,4-Dimethyl-3-ethylpentane",CCC(C(C)C)C(C)C,1068-87-7,biofuel
+"2,3-dimethylbutane",CC(C)C(C)C,79-29-8,biofuel
+"2,2,3-trimethylbutane",CC(C)C(C)(C)C,464-06-2,biofuel
+"2,2-Dimethylpropane",CC(C)(C)C,463-82-1,biofuel
+2-methylpentane,CCCC(C)C,107-83-5,biofuel
+3-methylpentane,CCC(C)CC,96-14-0,biofuel
+3-Hexene,CCC=CCC,592-47-2,biofuel
+3-methyl-1-pentene,CCC(C)C=C,760-20-3,biofuel
+2-ethyl-1-butene,CCC(=C)CC,760-21-4,biofuel
+"2,3-dimethyl-1-butene",CC(C)C(=C)C,563-78-0,biofuel
+"3,3-dimethyl-1-butene",CC(C)(C)C=C,558-37-2,biofuel
+"2,3-dimethyl-2-butene",CC(=C(C)C)C,563-79-1,biofuel
+4-methyl-1-hexene,CCC(C)CC=C,3769-23-1,biofuel
+"2,3,3-trimethyl-1-butene",CC(=C)C(C)(C)C,594-56-9,biofuel
+2-Methyl-1-hexene,CCCCC(=C)C,6094-02-6,biofuel
+2-Methyl-2-hexene,CCCC=C(C)C,2738-19-4,biofuel
+2-Methyl-3-hexene,CCC=CC(C)C,692-24-0,biofuel
+"2,3-Dimethyl-1-pentene",CCC(C)C(=C)C,3404-72-6,biofuel
+2-Methyl-2-propanol,CC(C)(C)O,75-65-0,biofuel
+3-methyl-1-butanol,CC(C)CCO,123-51-3,biofuel
+methyl tert-butyl ether,CC(C)(C)OC,1634-04-4,biofuel
+Tert-Amyl methyl ether,CCC(C)(C)OC,994-05-8,biofuel
+tert-butyl ethyl ether,CCOC(C)(C)C,637-92-3,biofuel
+benzene,C1=CC=CC=C1,71-43-2,biofuel
+toluene,CC1=CC=CC=C1,108-88-3,biofuel
+styrene,C=CC1=CC=CC=C1,100-42-5,biofuel
+4-Methyl-1-Hexene,CCC(C)CC=C,3769-23-1,biofuel
+4-Methyl-1-Pentene,CC(C)CC=C,691-37-2,biofuel
+4-Methyl-2-Pentene,CC=CC(C)C,4461-48-7,biofuel
+4-Methylheptane,CCCC(C)CCC,589-53-7,biofuel
+4-Octene,CCCC=CCCC,592-99-4,biofuel
+"1,2-dimethylbenzene (o-xylene)",CC1=CC=CC=C1C,95-47-6,biofuel
+"1,3-dimethylbenzene (m-Xylene)",CC1=CC(=CC=C1)C,108-38-3,biofuel
+"1,4-dimethylbenzene (p-Xylene)",CC1=CC=C(C=C1)C,106-42-3,biofuel
+ethylbenzene,CCC1=CC=CC=C1,100-41-4,biofuel
+Indane,C1CC2=CC=CC=C2C1,496-11-7,biofuel
+Propenylbenzene,CC=CC1=CC=CC=C1,637-50-3,biofuel
+n-propylbenzene,CCCC1=CC=CC=C1,103-65-1,biofuel
+"1,2,3-trimethylbenzene",CC1=C(C(=CC=C1)C)C,526-73-8,biofuel
+"1,2,4-trimethylbenzene",CC1=CC(=C(C=C1)C)C,95-63-6,biofuel
+"1,3,5-trimethylbenzene",CC1=CC(=CC(=C1)C)C,108-67-8,biofuel
+"2,4-Dimethyl-2-pentene",CC(C)C=C(C)C,625-65-0,biofuel
+"2,2,4-Trimethylpentane",CC(C)CC(C)(C)C,540-84-1,biofuel
+3-Methyl-2-butanone,CC(C)C(=O)C,563-80-4,biofuel
+"2,3,3-Trimethyl-1-Pentene",CCC(C)(C)C(=C)C,560-23-6,biofuel
+"2,3,3-Trimethylpentane",CCC(C)(C)C(C)C,560-21-4,biofuel
+"2,3,4-Trimethyl-2-Pentene",CC(C)C(=C(C)C)C,565-77-5,biofuel
+"2,3,4-Trimethylpentane",CC(C)C(C)C(C)C,565-75-3,biofuel
+"2,4-Dimethyl-1-Pentene",CC(C)CC(=C)C,2213-32-3,biofuel
+"2,4-Dimethyl-2-Pentene",CC(C)C=C(C)C,625-65-0,biofuel
+"2,4-Dimethyl-3-ethylpentane",CCC(C(C)C)C(C)C,1068-87-7,biofuel
+"1,1-Dimethylcyclohexane",CC1(C)CCCCC1,590-66-9,biofuel
+"1,1-Dimethylcyclopentane",CC1(CCCC1)C,1638-26-2,biofuel
+Cyclopentane,CC1CC(C(C1)(C)C)C,287-92-3,biofuel
+"1,3-Dimethylcyclopentane",CC1CCC(C1)C,2453-00-1,biofuel
+2-Methylpiperidine,CC1CCCCN1,109-05-7,biofuel
+2-Methylpyridine,CC1=CC=CC=N1,109-06-8,biofuel
+3-Methylpyridine,CC1=CN=CC=C1,108-99-6,biofuel
+4-Methylpyridine,CC1=CC=NC=C1,108-89-4,biofuel
+Aniline,C1=CC=C(C=C1)N,62-53-3,biofuel
+N-methylaniline,CNC1=CC=CC=C1,100-61-8,biofuel
+Indole,C1=CC=C2C(=C1)C=CN2,120-72-9,biofuel
+Quinoline,C1=CC=C2C(=C1)C=CC=N2,91-22-5,biofuel
+Dibenzopyrrole,C1=CC=C2C(=C1)C3=CC=CC=C3N2,86-74-8,biofuel
+Phenol,C1=CC=C(C=C1)O,108-95-2,biofuel
+Anisole,COC1=CC=CC=C1,100-66-3,biofuel
+Benzyl alcohol,C1=CC=C(C=C1)CO,100-51-6,biofuel
+O-Cresol,CC1=CC=CC=C1O,95-48-7,biofuel
+M-Cresol,CC1=CC(=CC=C1)O,108-39-4,biofuel
+P-Cresol,CC1=CC=C(C=C1)O,106-44-5,biofuel
+Benzaldehyde,C1=CC=C(C=C1)C=O,100-52-7,biofuel
+Phenetole,CCOC1=CC=CC=C1,103-73-1,biofuel
+4-Methylanisole,CC1=CC=C(C=C1)OC,104-93-8,biofuel
+1-Phenylethanol,CC(C1=CC=CC=C1)O,98-85-1,biofuel
+2-Phenylethanol ,C1=CC=C(C=C1)CCO,1960/12/8,biofuel
+"2,4-Xylenol",CC1=CC(=C(C=C1)O)C,105-67-9,biofuel
+Cinnamaldehyde,C1=CC=C(C=C1)C=CC=O,104-55-2,biofuel
+4-Propylanisole,CCCC1=CC=C(C=C1)OC,104-45-0,biofuel
+Guaiacol,COC1=CC=CC=C1O,1990/5/1,biofuel
+4-Methylguaiacol,CC1=CC(=C(C=C1)O)OC,93-51-6,biofuel
+4-Ethylguaiacol,CCC1=CC(=C(C=C1)O)OC,2785-89-9,biofuel
+Pentane,CCCCC,109-66-0,biofuel
+Methylamine,CN,74-89-5,biofuel
+Ethylamine,CCN,1975/4/7,biofuel
+2-Methylheptane,CCCCCC(C)C,592-27-8,biofuel
+3-Methylheptane,CCCCC(C)CC,589-81-1,biofuel
+4-Methylheptane,CCCC(C)CCC,589-53-7,biofuel
+3-Methyltetrahydrofuran,CC1CCOC1,13423-15-9,not biofuel
+"5-Methyl-2,3-dihydrofuran",CC1=CCCO1,1487-15-6,not biofuel
+2-Methyloxane,CC1CCCCO1,10141-72-7,not biofuel
+3-Methyloxane,CC1CCCOC1,26093-63-0,not biofuel
+4-Methyloxane,CC1CCOCC1,4717-96-8,not biofuel
+2-Ethyloxane,CCC1CCCCO1,3857-14-5,not biofuel
+3-Ethyloxane,CCC1CCCOC1,31468-34-5,not biofuel
+4-Ethyloxane,CCC1CCOCC1,,not biofuel
+"2,6-Dimethyloxane",CC1CCCC(C)O1,73237-48-6,not biofuel
+"2,3,5-Trimethyltetrahydrofuran",CC1CC(C)C(C)O1,2060048-64-6,not biofuel
+2-Propyltetrahydrofuran,CCCC1CCCO1,3208-22-8,not biofuel
+2-Propyloxane,CCCC1CCCCO1,3857-17-8,not biofuel
+"2,3,4,5-Tetramethyltetrahydrofuran",CC1OC(C)C(C)C1C,,not biofuel
+2-Isobutyltetrahydrofuran,CC(C)CC1CCCO1,651057-21-5,not biofuel
+"2,5-Dimethoxytetrahydrofuran",COC1CCC(OC)O1,696-59-3,not biofuel
+"2,5-Dimethoxy-2,5-dihydrofuran",COC1OC(OC)C=C1,332-77-4,not biofuel
+"2,3-Dimethyltetrahydrofuran",CC1CCOC1C,16251-73-3,not biofuel
+"2,5-Dimethyltetrahydrofuran",CC1CCC(C)O1,1003-38-9,not biofuel
+"2,4-Dimethyltetrahydrofuran",CC1COC(C)C1,64265-26-5,not biofuel
+2-Ethyltetrahydrofuran,CCC1CCCO1,1003-30-1,not biofuel
+2-Ethyloxane,CCC1CCCCO1,3857-14-5,not biofuel
+2-Methoxy-2-methylpropane,COC(C)(C)C,1634-04-4,not biofuel
+tert-Amyl methylether,CCC(C)(C)OC,994-05-8,not biofuel
+2-Propoxypropane,CCCOC(C)C,627-08-7,not biofuel
+2-Isopropoxypropane,CC(C)OC(C)C,108-20-3,not biofuel
+tert-Amyl ethylether,CCOC(C)(C)CC,919-94-8,not biofuel
+"1,1-Dimethylethyl 2-methylpropanoate",CC(C)C(=O)OC(C)(C)C,16889-72-8,not biofuel
+"2,2-Dimethylpropyl propanoate",CCC(=O)OCC(C)(C)C,3581-69-9,not biofuel
+"1,3-Dimethylbutyl acetate",CC(C)CC(C)OC(C)=O,108-84-9,not biofuel
+"2,3-Dimethylbutyl acetate",CC(C)C(C)COC(C)=O,71412-26-5,not biofuel
+"1,1,2-Trimethylpropyl acetate",CC(C)C(C)(C)OC(C)=O,4806-33-1,not biofuel
+"1,2,2-Trimethylpropyl acetate",CC(OC(C)=O)C(C)(C)C,616-51-3,not biofuel
+2-Methylpentyl formate,CCCC(C)COC=O,381670-34-4,not biofuel
+"Methyl 2,2-dimethylpentanoate",CCCC(C)(C)C(=O)OC,813-68-3,not biofuel
+"Methyl 3,3-dimethylpentanoate",CCC(C)(C)CC(=O)OC,101186-01-0,not biofuel
+"Ethyl 2,2-dimethylbutanoate",CCOC(=O)C(C)(C)CC,5129-40-8,not biofuel
+"Ethyl 3,3-dimethylbutanoate",CCOC(=O)CC(C)(C)C,5340-78-3,not biofuel
+"Ethyl 2,3-dimethylbutanoate",CCOC(=O)C(C)C(C)C,54004-42-1,not biofuel
+1-Methylpropyl 2-methylpropanoate,CCC(C)OC(=O)C(C)C,23412-21-7,not biofuel
+"Methyl 2,3-dimethylpentanoate",CCC(C)C(C)C(=O)OC,21641-66-7,not biofuel
+"Methyl 2,4-dimethylpentanoate",COC(=O)C(C)CC(C)C,71672-33-8,not biofuel
+"Methyl 3,4-dimethylpentanoate",COC(=O)CC(C)C(C)C,30288-22-3,not biofuel
+"Ethyl 2,2-dimethylbutanoate",CCOC(=O)C(C)(C)CC,5129-40-8,not biofuel
+"2,2-Dimethylcyclohexanone",CC1(CCCCC1=O)C,1193-47-1,not biofuel
+"3,3-Dimethylcyclohexanone",CC1(CCCC(=O)C1)C,2979-19-3,not biofuel
+"4,4-Dimethylcyclohexanone",CC1(CCC(=O)CC1)C,4255-62-3,not biofuel
+"2,3-Dimethylcyclohexanone",CC1CCCC(=O)C1C,13395-76-1,not biofuel
+"2,4-Dimethylcyclohexanone",CC1CCC(=O)C(C1)C,823-55-2,not biofuel
+"2,5-Dimethylcyclohexanone",CC1CCC(C(=O)C1)C,932-51-4,not biofuel
+"3,4,4-Trimethyl-2-pentanone",CC(C(C)=O)C(C)(C)C,5340-45-4,not biofuel
+"2,2,4-Trimethyl-3-pentanone",CC(C)C(=O)C(C)(C)C,5857-36-3,not biofuel
+"2,4-Dimethyl-3-hexanone",CCC(C)C(=O)C(C)C,18641-70-8,not biofuel
+"2,5-Dimethyl-3-hexanone",CC(C)CC(=O)C(C)C,1888-57-9,not biofuel
+"4,5-Dimethyl-3-hexanone",CCC(=O)C(C)C(C)C,6137-14-0,not biofuel
+"3,3-Dimethyl-2-pentanone",CCC(C)(C)C(C)=O,20669-04-9,not biofuel
+"4,4-Dimethyl-2-pentanone",CC(=O)CC(C)(C)C,590-50-1,not biofuel
+"3,4-Dimethyl-2-pentanone",CC(C)C(C)C(C)=O,565-78-6,not biofuel
+"2,4-Dimethyl-3-pentanone",CC(C)C(=O)C(C)C,565-80-0,not biofuel
+3-Ethyl-2-pentanone,CCC(CC)C(C)=O,6137/3/7,not biofuel
+3-Hexanol,CCCC(O)CC,623-37-0,not biofuel
+"2,2-Dimethylpentanol",CCCC(C)(C)CO,2370/12/9,not biofuel
+"3,3-Dimethylpentanol",CCC(C)(C)CCO,19264-94-9,not biofuel
+"4,4-Dimethylpentanol",CC(C)(C)CCCO,3121-79-7,not biofuel
+"2,3,3-Trimethylbutanol",CC(CO)C(C)(C)C,36794-64-6,not biofuel
+2-Methyl-2-hexanol,CCCCC(C)(C)O,625-23-0,not biofuel
+3-Methyl-3-hexanol,CCCC(C)(O)CC,597-96-6,not biofuel
+2-Phenylpentane,CCCC(C)C1=CC=CC=C1,2719-52-0,not biofuel
+tert-Amylbenzene,CCC(C)(C)C1=CC=CC=C1,2049-95-8,not biofuel
+n-Decylbenzene,CCCCCCCCCCC1=CC=CC=C1,104-72-3,not biofuel
+1-Methyl-4-(Trans-1-n-Propenyl)Benzene,CC=CC1=CC=C(C=C1)C,2077-30-7,not biofuel
+1-Methyl-4-allylbenzene,CC1=CC=C(C=C1)CC=C,3333-13-9,not biofuel
+2-Phenyl-1-Butene,CCC(=C)C1=CC=CC=C1,2039-93-2,not biofuel
+"1,2,3,4-Tetrahydronaphthalene",C1CCC2=CC=CC=C2C1,119-64-2,not biofuel
+2-Phenylpentane,CCCC(C)C1=CC=CC=C1,2719-52-0,not biofuel
+tert-Amylbenzene,CCC(C)(C)C1=CC=CC=C1,2049-95-8,not biofuel
+n-Decylbenzene,CCCCCCCCCCC1=CC=CC=C1,104-72-3,not biofuel
+"1,4-Diethylbenzene",CCC1=CC=C(C=C1)CC,105-05-5,not biofuel
+"1,2-Dimethyl-3-ethylbenzene",CCC1=CC=CC(=C1C)C,933-98-2,not biofuel
+"1,3-Dimethyl-4-ethylbenzene",CCC1=C(C)C=C(C)C=C1,874-41-9,not biofuel
+"1,3-Dimethyl-5-ethylbenzene",CCC1=CC(=CC(=C1)C)C,934-74-7,not biofuel
+Indane (hydrindene),C1CC2=CC=CC=C2C1,496-11-7,not biofuel
+cis-1-Propenylbenzene,CC=CC1=CC=CC=C1,766-90-5,not biofuel
+trans-1-Propenylbenzene,CC=CC1=CC=CC=C1,873-66-5,not biofuel
+2-Phenylpropene,CC(=C)C1=CC=CC=C1,98-83-9,not biofuel
+sec-Butylbenzene,CCC(C)C1=CC=CC=C1,135-98-8,not biofuel
+"1,4-Cyclohexadiene",C1C=CCC=C1,628-41-1,not biofuel
+"2-Methyl-1,5-Hexadiene",CC(=C)CCC=C,4049-81-4,not biofuel
+"2-Methyl-2,4-Hexadiene",CC=CC=C(C)C,28823-41-8,not biofuel
+"1-Methyl-1,4-cyclohexadiene",CC1=CCC=CC1,4313-57-9,not biofuel
+"2,5-Dimethyl-1,5-hexadiene",CC(=C)CCC(=C)C,627-58-7,not biofuel
+"2,5-Dimethyl-2,4-hexadiene",CC(=CC=C(C)C)C,764-13-6,not biofuel
+"2,6-Octadiene",CC=CCCC=CC,4974-27-0,not biofuel
+"2,6-Dimethyl-1,5-Heptadiene",CC(=CCCC(=C)C)C,6709-39-3,not biofuel
+Dicyclopentadiene,C1C=CC2C1C3CC2C=C3,77-73-6,not biofuel
+"4-Ethynyl-4-vinyl-1,6-heptadiene",C=CCC(CC=C)(C=C)C#C,19781-40-9,not biofuel
+1-Ethylcyclopentene,CCC1=CCCC1,2146-38-5,not biofuel
+3-Ethylcyclopentene,CCC1CCC=C1,694-35-9,not biofuel
+Cycloheptene,C1CCC=CCC1,628-92-2,not biofuel
+"1,5,5-Trimethylcyclopentene",CC1=CCCC1(C)C,62184-83-2,not biofuel
+1-Propylcyclopentene,CCCC1=CCCC1,3074-61-1,not biofuel
+1-Ethylcyclohexene,CCC1=CCCCC1,1453-24-3,not biofuel
+1-Methylcycloheptene,CC1=CCCCCC1,1453-25-4,not biofuel
+Propadiene,C=C=C,463-49-0,not biofuel
+"1,2-Butadiene",CC=C=C,590-19-2,not biofuel
+"3-Methyl-1,2-butadiene",CC(=C=C)C,598-25-4,not biofuel
+"1,2-Pentadiene",CCC=C=C,591-95-7,not biofuel
+"1,4-Pentadiene",C=CCC=C,591-93-5,not biofuel
+"2,3-Pentadiene",CC=C=CC,591-96-8,not biofuel
+3-Ethyl-4-methyl-2-pentene,CCC(=CC)C(C)C,19780-68-8,not biofuel
+"2,3,4-Trimethyl-2-pentene",CC(C)C(C)=C(C)C,565-77-5,not biofuel
+"3,4,4-Trimethyl-2-pentene",CC=C(C)C(C)(C)C,598-96-9,not biofuel
+"2-Ethyl-3,3-dimethyl-1-butene",CCC(=C)C(C)(C)C,18231-53-3,not biofuel
+Cyclopropene,C1C=C1,2781-85-3,not biofuel
+Cyclobutene,C1CC=C1,822-35-5,not biofuel
+3-Ethyl-2-methyl-1-pentene,CCC(CC)C(C)=C,19780-66-6,not biofuel
+3-Ethyl-4-methyl-1-pentene,CCC(C=C)C(C)C,61847-80-1,not biofuel
+"2,3,3-Trimethyl-1-pentene",CCC(C)(C)C(C)=C,560-23-6,not biofuel
+"2,3,4-trimethyl-1-pentene",CC(C)C(C)C(C)=C,565-76-4,not biofuel
+"2,4,4-Trimethyl-1-pentene",CC(=C)CC(C)(C)C,107-39-1,not biofuel
+"3,3,4-trimethyl-1-pentene",CC(C)C(C)(C)C=C,560-22-5,not biofuel
+"3,4,4-trimethyl-1-pentene",CC(C=C)C(C)(C)C,564-03-4,not biofuel
+"2,4,4-Trimethyl-2-pentene",CC(C)=CC(C)(C)C,107-40-4,not biofuel
+1-Hexene,CCCCC=C,592-41-6,biofuel
+2-Hexene,CCCC=CC,592-43-8,not biofuel
+3-Hexene,CCC=CCC,592-47-2,not biofuel
+1-Heptene,CCCCCC=C,592-76-7,biofuel
+2-Heptene,CCCCC=CC,592-77-8,biofuel
+3-Heptene,CCCC=CCC,592-78-9,not biofuel
+3-Ethylhexane,CCCC(CC)CC,619-99-8,not biofuel
+2-Methyloctane,CCCCCCC(C)C,3221-61-2,biofuel
+3-Methyloctane,CCCCCC(C)CC,2216-33-3,not biofuel
+4-Methyloctane,CCCCC(C)CCC,2216-34-4,biofuel
+"2,2-Dimethylheptane",CCCCCC(C)(C)C,1071-26-7,not biofuel
+"2,3-Dimethylheptane",CCCCC(C)C(C)C,3074-71-3,not biofuel
+"2,5-Dimethylheptane",CCC(C)CCC(C)C,2216-30-0,not biofuel
+"2,6-Dimethylheptane",CC(C)CCCC(C)C,1072-05-5,not biofuel
+"3,3-Dimethylheptane",CCCCC(C)(C)CC,4032-86-4,not biofuel
+"3,4-Dimethylheptane",CCCC(C)C(C)CC,922-28-1,not biofuel
+"3,5-Dimethylheptane",CCC(C)CC(C)CC,926-82-9,not biofuel
+n-Propylcyclohexane,CCCC1CCCCC1,1678-92-8,not biofuel
+n-Propylcyclopentane,CCCC1CCCC1,2040-96-2,not biofuel
+"cis-1,3-Dimethylcyclopentane",CC1CCC(C1)C,2532-58-3,not biofuel
+iso-Butylbenzene,CC(C)CC1=CC=CC=C1,538-93-2,biofuel
+sec-Butylbenzene,CCC(C)C1=CC=CC=C1,135-98-8,not biofuel
+"1,4-Dimethylcyclohexane",CC1CCC(C)CC1,589-90-2,not biofuel
+2-Methyl-1-heptene,CCCCCC(C)=C,15870-10-7,not biofuel
+"5,5-Dimethyl-2-hexene",CC=CCC(C)(C)C,36382-10-2,not biofuel
+"2,2-Dimethyl-3-hexene",CCC=CC(C)(C)C,3123-93-1,not biofuel
+"2,3-Dimethyl-3-hexene",CCC=C(C)C(C)C,7145-23-5,not biofuel
+"2,4-Dimethyl-3-hexene",CCC(C)=CC(C)C,82085-14-1,not biofuel
+"2,5-Dimethyl-3-hexene",CC(C)C=CC(C)C,15910-22-2,not biofuel
+"2,4-Dimethyl-2-hexene",CCC(C)C=C(C)C,14255-23-3,not biofuel
+"2,5-Dimethyl-2-hexene",CC(C)CC=C(C)C,3404-78-2,not biofuel
+"3,4-Dimethyl-2-hexene",CCC(C)C(C)=CC,2213-37-8,not biofuel
+"3,5-Dimethyl-2-hexene",CC=C(C)CC(C)C,3404-79-3,not biofuel
+"4,4-Dimethyl-2-hexene",CCC(C)(C)C=CC,3404-59-9,not biofuel
+"4,5-Dimethyl-2-hexene",CC=CC(C)C(C)C,73548-71-7,not biofuel
+"2,4-Dimethyl-1-hexene",CCC(C)CC(C)=C,16746-87-5,not biofuel
+"2,5-Dimethyl-1-hexene",CC(C)CCC(C)=C,6975-92-4,not biofuel
+"3,4-Dimethyl-1-hexene",CCC(C)C(C)C=C,16745-94-1,not biofuel
+"3,5-Dimethyl-1-hexene",CC(C)CC(C)C=C,7423-69-0,not biofuel
+"4,5-Dimethyl-1-hexene",CC(C)C(C)CC=C,16106-59-5,not biofuel
+"3,3-Dimethyl-1-hexene",CCCC(C)(C)C=C,3404-77-1,not biofuel
+"4,4-Dimethyl-1-hexene",CCC(C)(C)CC=C,1647-08-1,not biofuel
+"5,5-Dimethyl-1-hexene",CC(C)(C)CCC=C,7116-86-1,not biofuel
+"2,3-Dimethyl-2-hexene",CCCC(C)=C(C)C,7145-20-2,not biofuel
+2-methyl-2-heptene,CCCCC=C(C)C,627-97-4,not biofuel
+3-methyl-2-heptene,CCCCC(C)=CC,3404-75-9,not biofuel
+4-methyl-2-heptene,CCCC(C)C=CC,3404-56-6,not biofuel
+5-methyl-2-heptene,CCC(C)CC=CC,22487-87-2,not biofuel
+6-methyl-2-heptene,CC=CCCC(C)C,73548-72-8,not biofuel
+2-methyl-3-heptene,CCCC=CC(C)C,17618-76-7,not biofuel
+3-methyl-3-heptene,CCCC=C(C)CC,7300-03-0,not biofuel
+4-methyl-3-heptene,CCCC(C)=CCC,4485-16-9,not biofuel
+5-methyl-3-heptene,CCC=CC(C)CC,13172-91-3,not biofuel
+"2,3-Dimethyl-1-hexene",CCCC(C)C(C)=C,16746-86-4,not biofuel
+Ethylcyclopentane,CCC1CCCC1,1640-89-7,not biofuel
+"1,1-Dimethylcyclopentane",CC1(C)CCCC1,1638-26-2,not biofuel
+"1,2-Dimethylcyclopentane",CC1CCCC1C,2452-99-5,not biofuel
+"cis-1,3-Dimethylcyclopentane",CC1CCC(C1)C,2532-58-3,not biofuel
+Isopropylcyclopentane,CC(C)C1CCCC1,3875-51-2,not biofuel
+1-Ethyl-3-methylcyclopentane,CCC1CCC(C)C1,3726-47-4,not biofuel
+"1,2-Dimethylcyclohexane",CC1CCCCC1C,583-57-3,not biofuel
+"1,3-Dimethylcyclohexane",CC1CCCC(C)C1,591-21-9,not biofuel
+"1,4-Dimethylcyclohexane",CC1CCC(C)CC1,589-90-2,not biofuel
+"1,1,2-Trimethylcyclohexane",CC1CCCCC1(C)C,7094-26-0,not biofuel
+"1,1,3-Trimethylcyclohexane",CC1CCCC(C)(C)C1,3073-66-3,not biofuel
+"1,2,3-Trimethylcyclohexane",CC1CCCC(C)C1C,1678-97-3,not biofuel
+"1,2,4-Trimethylcyclohexane",CC1CCC(C)C(C)C1,2234-75-5,not biofuel
+"1,3,5-Trimethylcyclohexane",CC1CC(C)CC(C)C1,1839-63-0,not biofuel
+"1,1-Dimethylcycloheptane",CC1(C)CCCCCC1,13151-49-0,not biofuel
+Ethylcycloheptane,CCC1CCCCCC1,13151-55-8,not biofuel
+3-Ethylpentane,CCC(CC)CC,617-78-7,not biofuel
+"2,2,3-Trimethylbutane",CC(C)C(C)(C)C,464-06-2,not biofuel
+2-Methylheptane,CCCCCC(C)C,592-27-8,not biofuel
+"2,3-Dimethylhexane",CCCC(C)C(C)C,584-94-1,not biofuel
+"2,4-Dimethylhexane",CCC(C)CC(C)C,589-43-5,not biofuel
+"2,5-Dimethylhexane",CC(C)CCC(C)C,592-13-2,not biofuel
+"3,3-Dimethylhexane",CCCC(C)(C)CC,563-16-6,not biofuel
+"2,2-Dimethylhexane",CCCCC(C)(C)C,590-73-8,not biofuel
+"3,4-Dimethylhexane",CCC(C)C(C)CC,583-48-2,not biofuel
+3-Ethylhexane,CCCC(CC)CC,619-99-8,not biofuel
+"2,3-Dimethylpentane",CCC(C)C(C)C,565-59-3,not biofuel
+"2,4-Dimethylpentane",CC(C)CC(C)C,108-08-7,not biofuel
+3-Ethylpentane,CCC(CC)CC,617-78-7,not biofuel
+"2,2,3-Trimethylbutane",CC(C)C(C)(C)C,464-06-2,not biofuel
+2-Methylheptane,CCCCCC(C)C,592-27-8,not biofuel
