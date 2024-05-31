@@ -1,52 +1,92 @@
 import pandas as pd
-from rdkit import Chem
-from rdkit.Chem import Descriptors
-from rdkit.Chem import Crippen
-from rdkit.Chem import rdMolDescriptors
-import os
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.utils.data as data_utils
 
-# Read the CSV file
-csv_file = 'new dataset.csv'
-df = pd.read_csv(csv_file)
+# 读取CSV文件
+data = pd.read_csv('dataset Xiqi.csv')
 
-# Define a function to compute molecular properties
-def compute_properties(smiles):
-    mol = Chem.MolFromSmiles(smiles)
-    if mol is None:
-        print(f'Error: Invalid SMILES string encountered: {smiles}')
-        return None
-    else:
-        properties = {
-            'MolWt': Descriptors.MolWt(mol),
-            'ExactMolWt': Descriptors.ExactMolWt(mol),
-            'LogP': Crippen.MolLogP(mol),
-            'NumHDonors': Descriptors.NumHDonors(mol),
-            'NumHAcceptors': Descriptors.NumHAcceptors(mol),
-            'NumRotatableBonds': Descriptors.NumRotatableBonds(mol),
-            'TPSA': rdMolDescriptors.CalcTPSA(mol),
-            'MolVolume': Descriptors.MolMR(mol)  # Molecular volume can be approximated by the molar refractivity
-        }
-        print(f'Properties for {smiles}: {properties}')
-        return properties
+# 将数据转换为合适的类型
+# 假设你的特征列从第二列开始
+features = data.iloc[:, 4:].values.astype(np.float32)
 
-# Apply the function to each row
-df_properties = df['SMILES'].apply(compute_properties)
+# 创建PyTorch张量
+features_tensor = torch.tensor(features)
 
-# Check the computed results
-print(df_properties.head())
+# 创建数据加载器
+batch_size = 64
+data_loader = data_utils.DataLoader(features_tensor, batch_size=batch_size, shuffle=True)
 
-# Merge the results into the original DataFrame
-df = pd.concat([df, df_properties.apply(pd.Series)], axis=1)
 
-# Ensure the output folder exists
-output_folder = '.venv'
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
+# 定义生成器
+class Generator(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(Generator, self).__init__()
+        self.map1 = nn.Linear(input_size, hidden_size)
+        self.map2 = nn.Linear(hidden_size, output_size)
 
-# Save the results to a new CSV file
-output_file = os.path.join(output_folder, 'molecules_properties11.csv')
-df.to_csv(output_file, index=False)
+    def forward(self, x):
+        x = torch.relu(self.map1(x))
+        return torch.sigmoid(self.map2(x))
 
-print(f'Molecular properties calculated and saved to {output_file}')
+
+# 定义判别器
+class Discriminator(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(Discriminator, self).__init__()
+        self.map1 = nn.Linear(input_size, hidden_size)
+        self.map2 = nn.Linear(hidden_size, output_size)
+
+    def forward(self, x):
+        x = torch.relu(self.map1(x))
+        return torch.sigmoid(self.map2(x))
+
+
+# 初始化生成器和判别器
+input_size = features.shape[1]  # 特征的维度
+hidden_size = 128
+output_size = input_size
+
+generator = Generator(input_size, hidden_size, output_size)
+discriminator = Discriminator(input_size, hidden_size, 1)
+
+# 定义损失函数和优化器
+criterion = nn.BCELoss()  # 二分类交叉熵损失
+gen_optimizer = torch.optim.Adam(generator.parameters(), lr=0.001)
+dis_optimizer = torch.optim.Adam(discriminator.parameters(), lr=0.001)
+
+# 训练GAN模型
+generated_data = []
+
+num_epochs = 100
+for epoch in range(num_epochs):
+    for data_batch in data_loader:
+        # 训练判别器
+        real_data = data_batch
+        fake_data = generator(torch.randn(batch_size, input_size))
+        dis_optimizer.zero_grad()
+        dis_real_output = discriminator(real_data)
+        dis_fake_output = discriminator(fake_data.detach())
+        dis_loss_real = criterion(dis_real_output, torch.ones_like(dis_real_output))
+        dis_loss_fake = criterion(dis_fake_output, torch.zeros_like(dis_fake_output))
+        dis_loss = dis_loss_real + dis_loss_fake
+        dis_loss.backward()
+        dis_optimizer.step()
+
+        # 训练生成器
+        gen_optimizer.zero_grad()
+        fake_data = generator(torch.randn(batch_size, input_size))
+        dis_fake_output = discriminator(fake_data)
+        gen_loss = criterion(dis_fake_output, torch.ones_like(dis_fake_output))
+        gen_loss.backward()
+        gen_optimizer.step()
+
+        # 保存生成的数据
+        generated_data.append(fake_data.detach().numpy())
+
+# 将生成的数据保存到文件中
+generated_data = np.concatenate(generated_data, axis=0)
+np.savetxt('generated_data.csv', generated_data, delimiter=',')
 
 
