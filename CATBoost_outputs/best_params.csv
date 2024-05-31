@@ -1,0 +1,2 @@
+memory,steps,verbose,linearsvc,linearsvc__C,linearsvc__class_weight,linearsvc__dual,linearsvc__fit_intercept,linearsvc__intercept_scaling,linearsvc__loss,linearsvc__max_iter,linearsvc__multi_class,linearsvc__penalty,linearsvc__random_state,linearsvc__tol,linearsvc__verbose
+,"[('linearsvc', LinearSVC(C=0.1, dual=True, random_state=42, tol=0.1))]",False,"LinearSVC(C=0.1, dual=True, random_state=42, tol=0.1)",0.1,,True,True,1,squared_hinge,1000,ovr,l2,42,0.1,0
