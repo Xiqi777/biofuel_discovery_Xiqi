@@ -26,7 +26,7 @@ def read_data(csv_file):
     return df
 
 # Set the file name
-csv_file = 'new dataset（biofuel）.csv'
+csv_file = 'new dataset(biofuel).csv'
 
 # Read data
 df = read_data(csv_file)
