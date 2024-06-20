@@ -1,3 +1,4 @@
+
 import os
 import pandas as pd
 import numpy as np
@@ -162,7 +163,7 @@ def get_important_features(model, feature_names, top_n=5):
 
 # Main function
 def main():
-    csv_file = 'new_dataset.csv'
+    csv_file = 'datasets_with_properties.csv'
     perform_hyperparameter_optimization = True  # Boolean flag to control hyperparameter optimization
 
 
@@ -170,6 +171,8 @@ def main():
 
     # Read and preprocess data
     df = read_data(csv_file)
+    feature_columns = ['MolWeight', 'LogP', 'NumHDonors', 'NumHAcceptors', 'TPSA',
+                       'NumRotatableBonds', 'NumAromaticRings',]
     X, y, smiles, label_encoder = apply_fingerprint(df)
     X_train, X_test, y_train, y_test, smiles_train, smiles_test = split_data(X, y, smiles)
     print("Label classes:", label_encoder.classes_)
