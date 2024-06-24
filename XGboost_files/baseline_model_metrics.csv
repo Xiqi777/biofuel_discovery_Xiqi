@@ -1,3 +1,0 @@
-accuracy,roc_auc,f1_score,precision,recall,confusion_matrix,classification_report
-0.6515151515151515,0.754326923076923,0.7160493827160495,0.7073170731707317,0.725,"[[14 12]
- [11 29]]","{'biofuel': {'precision': 0.56, 'recall': 0.5384615384615384, 'f1-score': 0.5490196078431373, 'support': 26.0}, 'not biofuel': {'precision': 0.7073170731707317, 'recall': 0.725, 'f1-score': 0.7160493827160495, 'support': 40.0}, 'accuracy': 0.6515151515151515, 'macro avg': {'precision': 0.6336585365853659, 'recall': 0.6317307692307692, 'f1-score': 0.6325344952795934, 'support': 66.0}, 'weighted avg': {'precision': 0.6492830746489283, 'recall': 0.6515151515151515, 'f1-score': 0.6502497744327811, 'support': 66.0}}"
