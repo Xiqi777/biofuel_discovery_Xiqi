@@ -7,6 +7,7 @@ This project aims to design novel biofuel molecules using machine learning and G
 - [Background](#background)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Examples](#examples)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -62,7 +63,39 @@ Run `MOLGAN.py` on Myriad to generate potential novel biofuel molecules.
 python MOLGAN.py
 ```
 
+## Examples
 
+### Classifier Results
+
+CATBoost results: see `CATBoost_outputs` folder.
+XGBoost results: see `XGBoost_outputs` folder.
+
+## Generated Novel Biofuel Molecules
+
+The generated biofuel molecules can be viewed after running `MOLGAN.py.` The molecules will be output to the console and displayed as images.
+
+## File Structure
+
+```bash
+CATBoost_outputs/              # Results obtained by running latest and currently used datasets with CATBoost
+XGBoost_outputs/               # Results obtained by running latest and currently used datasets with XGBoost
+CATboost_classifier_biofuel.py # Code for using CATBoost to create a classifier
+classifier_Xgboost_fingerprint_biofuel.py # Code for using XGBoost to create a classifier
+MOLGAN.py                      # Code for using MOLGAN to create potential biofuel molecules
+dataset run.py                 # Code for obtaining fingerprints and properties of fuel molecules
+datasets_with_properties.csv   # Fingerprints and properties of biofuel and non-biofuel molecules
+new datasets.csv               # Name/SMILES/Type of biofuel and non-biofuel molecules
+```
+
+## Contribution
+
+We welcome any form of contribution. If you have any suggestions for improvement or find any bugs, please submit a Pull Request.
+
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
