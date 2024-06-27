@@ -402,6 +402,39 @@ assert 'roc_auc' in final_metrics, "ROC AUC metric is missing in the final metri
 
 ### 2. `CATboost_classifier_biofuel.py`
 
+This code snippet creates an output directory named XGBoost_output to store the generated output files. You can change the output path by modifying the output_dir part.
+
+```bash
+# Create output directory
+output_dir = "XGBoost_output"
+os.makedirs(output_dir, exist_ok=True)
+```
+
+2.read_data函数用于读取CSV文件并返回一个包含数据的DataFrame对象。函数会检查数据集中是否包含SMILES和Type两列，如果缺失则抛出断言错误。
+
+```bash
+# Function to read data
+def read_data(csv_file):
+    print("Reading dataset...")
+    df = pd.read_csv(csv_file)
+    assert 'SMILES' in df.columns, "SMILES column is missing in the dataset"
+    assert 'Type' in df.columns, "Type column is missing in the dataset"
+    print("Dataset reading completed.")
+    return df
+```
+
+3.encode_labels函数将目标标签进行编码，使用LabelEncoder对象将分类变量转换为数值标签，并返回编码后的标签数组及LabelEncoder对象。
+
+```bash
+# Function to encode the target labels
+def encode_labels(y):
+    le = LabelEncoder()
+    y_encoded = le.fit_transform(y)
+    return y_encoded, le
+```
+
+4.
+
 ### 3. `MOLGAN.py`
 
 ## Results
