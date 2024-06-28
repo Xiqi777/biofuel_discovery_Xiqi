@@ -410,7 +410,7 @@ output_dir = "XGBoost_output"
 os.makedirs(output_dir, exist_ok=True)
 ```
 
-2.read_data函数用于读取CSV文件并返回一个包含数据的DataFrame对象。函数会检查数据集中是否包含SMILES和Type两列，如果缺失则抛出断言错误。
+The `read_data` function is used to read a CSV file and return a DataFrame object containing the data. The function checks if the dataset contains the 'SMILES' and 'Type' columns, and if either is missing, it raises an assertion error.
 
 ```bash
 # Function to read data
@@ -423,8 +423,7 @@ def read_data(csv_file):
     return df
 ```
 
-3.encode_labels函数将目标标签进行编码，使用LabelEncoder对象将分类变量转换为数值标签，并返回编码后的标签数组及LabelEncoder对象。
-
+The `encode_labels` function encodes the target labels using a `LabelEncoder` object, which converts categorical variables into numerical labels. It returns the encoded label array and the `LabelEncoder` object.
 ```bash
 # Function to encode the target labels
 def encode_labels(y):
@@ -433,9 +432,297 @@ def encode_labels(y):
     return y_encoded, le
 ```
 
-4.
+The `smiles_to_fingerprint` function converts molecules represented by SMILES into Morgan fingerprints. It uses RDKit to extract molecular fingerprints with a specified radius and number of bits, and returns the fingerprints as a NumPy array.
+
+```bash
+# Function to convert SMILES to fingerprints
+def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
+    mol = Chem.MolFromSmiles(smiles)
+    assert mol is not None, f"RDKit could not parse SMILES: {smiles}"
+    fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius=radius, nBits=n_bits)
+    return np.array(fp)
+```
+
+Convert all SMILES strings in the DataFrame to molecular fingerprints, and return the feature matrix, label array, SMILES array, and label encoder.
+
+```bash
+# Function to apply the fingerprint function to the dataset
+def apply_fingerprint(df):
+    print("Applying fingerprint conversion...")
+    df['Fingerprint'] = df['SMILES'].apply(smiles_to_fingerprint)
+    X = np.stack(df['Fingerprint'])
+    y, label_encoder = encode_labels(df['Type'].values)
+    smiles = df['SMILES'].values  # Store SMILES strings
+    print("Fingerprint conversion completed.")
+    return X, y, smiles, label_encoder
+```
+
+The split_data function is used to divide the dataset (X, y, smiles) into training and test sets, and returns the split training and test feature data, label data, and SMILES string arrays.
+
+```bash
+# Function to split the data into training and external test sets
+def split_data(X, y, smiles):
+    print("Splitting data into training and test sets...")
+    X_train, X_test, y_train, y_test, smiles_train, smiles_test = train_test_split(X, y, smiles, test_size=0.2, random_state=42)
+    assert len(X_train) > 0 and len(X_test) > 0, "Training or testing set is empty"
+    print("Data splitting completed.")
+    return X_train, X_test, y_train, y_test, smiles_train, smiles_test
+```
+
+Remove features with variance below the threshold to reduce noise in the data. The sensitivity of feature selection can be adjusted by changing the `threshold` value.
+
+```bash
+# Preprocessing functions
+
+def low_variance_filter(X, threshold=0.01):
+    selector = VarianceThreshold(threshold=threshold)
+    X_filtered = selector.fit_transform(X)
+    assert X_filtered.shape[1] > 0, "All features removed by low variance filter"
+    return X_filtered
+```
+
+Remove features in the training set with correlation above the threshold to reduce feature redundancy. The strictness of the correlation filter can be adjusted by changing the `threshold` value.
+
+```bash
+def correlation_filter(X_train, X_test, threshold=0.95):
+    corr_matrix = np.corrcoef(X_train, rowvar=False)
+    upper = np.triu(np.ones(corr_matrix.shape), k=1).astype(bool)
+    to_drop = [column for column in range(corr_matrix.shape[1]) if any(corr_matrix[column, row] > threshold for row in range(corr_matrix.shape[0]))]
+    X_train_filtered = np.delete(X_train, to_drop, axis=1)
+    X_test_filtered = np.delete(X_test, to_drop, axis=1)
+    assert X_train_filtered.shape[1] > 0, "All features removed by correlation filter"
+    return X_train_filtered, X_test_filtered
+```
+
+Convert SMILES to fingerprints based on the given radius and number of bits. The radius for fingerprint calculation can be adjusted by changing the `radius` value, and the number of bits can be modified by changing the `n_bits` value.
+
+```bash
+def manipulate_fingerprints(smiles, radius=3, n_bits=4096):
+    return np.array([smiles_to_fingerprint(s, radius=radius, n_bits=n_bits) for s in smiles])
+```
+
+The `preprocess_data` function calls the previously defined feature selection and fingerprint processing functions, preprocesses the data based on user-specified options, and returns the preprocessed training and test feature datasets.
+
+```bash
+# Function to preprocess data
+def preprocess_data(X_train, X_test, smiles_train, smiles_test, apply_low_variance=True, apply_correlation_filter=True, apply_fingerprint_manipulation=True):
+    print("Starting preprocessing...")
+    if apply_low_variance:
+        print("Applying low variance filter...")
+        X_train = low_variance_filter(X_train)
+        X_test = low_variance_filter(X_test)
+    if apply_correlation_filter:
+        print("Applying correlation filter...")
+        X_train, X_test = correlation_filter(X_train, X_test)
+    if apply_fingerprint_manipulation:
+        print("Applying fingerprint manipulation...")
+        X_train = manipulate_fingerprints(smiles_train)
+        X_test = manipulate_fingerprints(smiles_test)
+    print("Preprocessing completed.")
+    return X_train, X_test
+```
+
+Calculate various evaluation metrics such as accuracy, ROC AUC, F1 score, precision, recall, confusion matrix, and classification report.
+
+```bash
+# Function to compute all relevant metrics
+def compute_metrics(y_true, y_pred, y_proba, label_encoder):
+    metrics = {
+        'accuracy': accuracy_score(y_true, y_pred),
+        'roc_auc': roc_auc_score(y_true, y_proba),
+        'f1_score': f1_score(y_true, y_pred),
+        'precision': precision_score(y_true, y_pred),
+        'recall': recall_score(y_true, y_pred),
+        'confusion_matrix': confusion_matrix(y_true, y_pred),
+        'classification_report': classification_report(y_true, y_pred, output_dict=True, target_names=label_encoder.classes_)
+    }
+    return metrics
+```
+
+Train a baseline XGBoost model, predict on the test set, and calculate evaluation metrics.
+
+```bash
+# Adjust the baseline_model function to pass the label encoder to compute_metrics
+def baseline_model(X_train, y_train, X_test, y_test, label_encoder):
+    print("Training baseline model...")
+    model = XGBClassifier(use_label_encoder=False, eval_metric='logloss')
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    y_proba = model.predict_proba(X_test)[:, 1]
+    # Additional assertions
+    assert len(np.unique(y_pred)) > 1, "Prediction resulted in only one class"
+    assert y_proba.min() >= 0 and y_proba.max() <= 1, "Probabilities are not between 0 and 1"
+    print(f"Debug: y_test: {y_test[:10]}, y_proba: {y_proba[:10]}")
+    metrics = compute_metrics(y_test, y_pred, y_proba, label_encoder)
+    print("Baseline model training completed.")
+    return model, metrics
+```
+
+Plot and Save ROC Curve. 
+
+```bash
+# Function to plot and save ROC curve
+def plot_and_save_roc(y_true, y_proba, label_encoder, filename='roc_curve.png'):
+    # Find the positive label
+    pos_label = label_encoder.transform(['biofuel'])[0]
+    fpr, tpr, thresholds = roc_curve(y_true, y_proba, pos_label=pos_label)
+    print(f"Debug: FPR: {fpr}, TPR: {tpr}, Thresholds: {thresholds}")
+    roc_auc = auc(fpr, tpr)
+    plt.figure()
+    plt.plot(fpr, tpr, color='darkorange', lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
+    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.savefig(os.path.join(output_dir, filename))
+    plt.close()
+```
+
+plot a Pairplot with the most important features and color the data points according to the `target_column`.
+
+```bash
+def plot_pairplot(df, features, target_column, filename='pairplot.png'):
+    sns.pairplot(df[features + [target_column]], hue=target_column)
+    plt.savefig(os.path.join(output_dir, filename))
+    plt.close()
+```
+
+Optimize the hyperparameters of the model using TPOT
+
+```bash
+def optimize_hyperparameters(X, y):
+    print("Starting hyperparameter optimization...")
+    tpot = TPOTClassifier(generations=50, population_size=20, cv=5, random_state=42, verbosity=2, config_dict='TPOT sparse')
+    tpot.fit(X, y)
+    print("Hyperparameter optimization completed.")
+    return tpot.fitted_pipeline_, tpot.fitted_pipeline_.get_params()
+```
+
+Get the most important features from the model.
+
+```bash
+def get_important_features(model, feature_names, top_n=5):
+    feature_importances = model.feature_importances_
+    indices = np.argsort(feature_importances)[-top_n:]
+    important_features = [feature_names[i] for i in indices]
+    return important_features
+```
+
+Complete the entire process of data reading, preprocessing, model training, evaluation, and results saving. This includes training the baseline model, optimizing the model, evaluating performance, and visualizing results.
+
+```bash
+def main():
+    csv_file = 'new dataset.csv'
+    perform_hyperparameter_optimization = True  # Boolean flag to control hyperparameter optimization
+
+    # Read and preprocess data
+    df = read_data(csv_file)
+    X, y, smiles, label_encoder = apply_fingerprint(df)
+    X_train, X_test, y_train, y_test, smiles_train, smiles_test = split_data(X, y, smiles)
+    print("Label classes:", label_encoder.classes_)
+
+    # Preprocess the data with user options
+    apply_low_variance = False
+    apply_correlation_filter = False
+    apply_fingerprint_manipulation = True  # Ensure this is set to True
+
+    X_train_preprocessed, X_test_preprocessed = preprocess_data(X_train, X_test, smiles_train, smiles_test, apply_low_variance,
+                                                                apply_correlation_filter, apply_fingerprint_manipulation)
+    assert X_train_preprocessed.shape[1] > 0 and X_test_preprocessed.shape[1] > 0, "Preprocessing removed all features"
+
+    # Train and evaluate the baseline model with preprocessed data
+    baseline_model_result, baseline_metrics = baseline_model(X_train_preprocessed, y_train, X_test_preprocessed, y_test, label_encoder)
+
+    print("Baseline Metrics:")
+    for key, value in baseline_metrics.items():
+        if key != 'confusion_matrix' and key != 'classification_report':
+            print(f"{key}: {value}")
+    print(f"Confusion Matrix:\n{baseline_metrics['confusion_matrix']}")
+    print(f"Classification Report:\n{pd.DataFrame(baseline_metrics['classification_report']).transpose()}")
+
+    # Save baseline metrics to CSV
+    baseline_metrics_df = pd.DataFrame([baseline_metrics])
+    baseline_metrics_df.to_csv(os.path.join(output_dir, 'baseline_model_metrics.csv'), index=False)
+
+    # Plot and save ROC curve for the baseline model
+    plot_and_save_roc(y_test, baseline_model_result.predict_proba(X_test_preprocessed)[:, 0], label_encoder, filename='baseline_roc_curve.png')
+
+    if perform_hyperparameter_optimization:
+        # Perform hyperparameter optimization
+        best_pipeline, best_params = optimize_hyperparameters(X_train_preprocessed, y_train)
+
+        # Save the best hyperparameters
+        best_params_df = pd.DataFrame([best_params])
+        best_params_df.to_csv(os.path.join(output_dir, 'best_params.csv'), index=False)
+        print("Best Hyperparameters:", best_params)
+    else:
+        best_params = {}
+
+    # Remove any unexpected keyword arguments from best_params
+    valid_params = XGBClassifier().get_params().keys()
+    best_params = {k: v for k, v in best_params.items() if k in valid_params}
+
+    # Retrain the model with the best hyperparameters
+    best_model = XGBClassifier(**best_params, use_label_encoder=False, eval_metric='logloss')
+    best_model.fit(X_train_preprocessed, y_train)
+    y_pred = best_model.predict(X_test_preprocessed)
+    y_proba = best_model.predict_proba(X_test_preprocessed)[:, 1]  # Use index 1 for the positive class
+
+    # Additional assertions
+    assert len(np.unique(y_pred)) > 1, "Prediction resulted in only one class"
+    assert y_proba.min() >= 0 and y_proba.max() <= 1, "Probabilities are not between 0 and 1"
+    print(f"Debug: y_test: {y_test[:10]}, y_proba: {y_proba[:10]}")
+
+    # Evaluate the final model
+    final_metrics = compute_metrics(y_test, y_pred, y_proba, label_encoder)
+
+    # Save the final metrics and confusion matrix
+    final_metrics_df = pd.DataFrame([final_metrics])
+    final_metrics_df.to_csv(os.path.join(output_dir, 'final_model_metrics.csv'), index=False)
+
+    confusion_matrix_df = pd.DataFrame(final_metrics['confusion_matrix'],
+                                       index=['Actual Negative', 'Actual Positive'],
+                                       columns=['Predicted Negative', 'Predicted Positive'])
+    confusion_matrix_df.to_csv(os.path.join(output_dir, 'final_confusion_matrix.csv'))
+
+    print("Final Model Metrics:")
+    for key, value in final_metrics.items():
+        if key != 'confusion_matrix' and key != 'classification_report':
+            print(f"{key}: {value}")
+    print(f"Confusion Matrix:\n{final_metrics['confusion_matrix']}")
+    print(f"Classification Report:\n{pd.DataFrame(final_metrics['classification_report']).transpose()}")
+
+    # Plot and save ROC curve for the final model
+    plot_and_save_roc(y_test, best_model.predict_proba(X_test_preprocessed)[:, 0], label_encoder, filename='final_roc_curve.png')
+
+    # Plot pairplot with the most important features
+    important_features = get_important_features(best_model, range(X_train_preprocessed.shape[1]), top_n=5)
+    df_imp_features = pd.DataFrame(X_train_preprocessed, columns=range(X_train_preprocessed.shape[1]))
+    df_imp_features['Type'] = y_train
+
+    plot_pairplot(df_imp_features, important_features, 'Type', filename='important_features_pairplot.png')
+
+    # Additional assertions for model evaluation and data integrity
+    assert len(important_features) == 5, "Important features extraction did not return 5 features"
+    assert len(final_metrics) > 0, "Final metrics are not computed"
+    assert best_model is not None, "Best model training failed"
+    assert baseline_model_result is not None, "Baseline model training failed"
+    assert X_train_preprocessed.shape[0] == X_train.shape[0], "Preprocessing changed the number of training samples"
+    assert X_test.shape[0] > 0, "Test set is empty after split"
+    assert y_pred is not None, "Prediction failed on the test set"
+    assert y_proba is not None, "Probability prediction failed on the test set"
+    assert 'accuracy' in final_metrics, "Accuracy metric is missing in the final metrics"
+    assert 'roc_auc' in final_metrics, "ROC AUC metric is missing in the final metrics"
+
+if __name__ == "__main__":
+    main()
+```
 
 ### 3. `MOLGAN.py`
+
 
 ## Results
 
