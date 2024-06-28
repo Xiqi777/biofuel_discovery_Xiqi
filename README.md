@@ -723,6 +723,92 @@ if __name__ == "__main__":
 
 ### 3. `MOLGAN.py`
 
+Importing necessary libraries and modules for data handling, deep learning with DeepChem, molecule visualization with RDKit, and TensorFlow utilities.
+
+```bash
+import deepchem
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+from collections import OrderedDict
+import time
+
+import deepchem as dc
+import deepchem.models
+from deepchem.models import BasicMolGANModel as MolGAN
+from deepchem.models.optimizers import ExponentialDecay
+import tensorflow as tf
+from tensorflow import one_hot
+from rdkit import Chem
+from rdkit.Chem.Draw import IPythonConsole
+from rdkit.Chem import Draw
+
+from deepchem.feat.molecule_featurizers.molgan_featurizer import GraphMatrix
+```
+
+Reads a CSV file (`biofuels.csv`) into a Pandas DataFrame (`df`) and sets a variable `num_atoms` to 12. You can change the filename (`biofuels.csv`) or adjust `num_atoms` to handle different molecule sizes.
+
+```bash
+df = pd.read_csv("biofuels.csv")
+num_atoms = 12
+```
+
+Prepares data for featurization by filtering out SMILES strings with more than `num_atoms` atoms. `num_atoms` can be adjusted to change the maximum number of atoms allowed in the molecules.
+
+```bash
+data = df
+feat = dc.feat.MolGanFeaturizer(max_atom_count=num_atoms, atom_labels=[0, 5, 6, 7, 8, 9, 11, 12, 13, 14])
+smiles = data['SMILES'].values
+filtered_smiles = [x for x in smiles if Chem.MolFromSmiles(x).GetNumAtoms() < num_atoms]
+```
+
+Converts filtered SMILES strings into molecular features using the MolGanFeaturizer. Parameters of MolGanFeaturizer (like `max_atom_count` and `atom_labels`) can be adjusted for different featurization strategies.
+
+```bash
+features = feat.featurize(filtered_smiles)
+```
+
+Defines and trains a MolGAN model using the features extracted earlier. You can change the training behavior by adjusting parameters such as `learning_rate` and `vertices`.
+
+```bash
+gan = MolGAN(learning_rate=ExponentialDecay(0.001, 0.9, 5000), vertices=num_atoms)
+dataset = dc.data.NumpyDataset([x.adjacency_matrix for x in features],[x.node_features for x in features])
+```
+
+Trains the MolGAN model with batch iterations and checkpoints.  Number of epochs (`25`), `generator_steps`, and `checkpoint_interval` can be adjusted for different training durations and model stability.
+
+```bash
+gan.fit_gan(iterbatches(25), generator_steps=0.2, checkpoint_interval=5000)
+```
+
+Generates new molecules and visualizes the results. Number of molecules to generate (`15000`) can be adjusted based on computational resources and desired output quantity.
+
+```bash
+generated_data = gan.predict_gan_generator(15000)
+nmols = feat.defeaturize(generated_data)
+```
+
+Prepares and visualizes unique generated molecules.
+
+```bash
+nmols_smiles_unique = list(OrderedDict.fromkeys([Chem.MolToSmiles(m) for m in nmols if m]))
+nmols_viz = [Chem.MolFromSmiles(x) for x in nmols_smiles_unique]
+```
+
+Prints generated SMILES and displays images of generated molecules. Image size (`subImgSize`), number of molecules per row (`molsPerRow`), and maximum number of molecules to display (`maxMols`) can be adjusted for visual output preferences.
+
+```bash
+for smiles in nmols_smiles_unique:
+    print(smiles)
+
+img = Draw.MolsToGridImage(nmols_viz[0:100], molsPerRow=5, subImgSize=(250, 250), maxMols=100, legends=None, returnPNG=False)
+
+plt.figure(figsize=(12, 12))
+plt.imshow(img)
+plt.axis('off')
+plt.show()
+```
 
 ## Results
 
