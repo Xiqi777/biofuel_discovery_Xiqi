@@ -61,7 +61,7 @@ MOLGAN.py                      # Code for using MOLGAN to create potential biofu
    - Output: Generated biofuel molecules
 
 6. **Integration and Iteration**
-   - Integrate the generated biofuel molecules from step 5 into the small dataset `new dataset.csv`. Re-establish classifiers and repeat steps 2, 3, 4, and 5 to form a closed loop between MOLGAN and classifier development.
+   - Integrate the generated biofuel molecules from step 5 into the original large dataset `biomass.csv`. Re-classify and repeat steps 3, 4, and 5 to form a closed loop between MOLGAN and classifier development.
 
 
 ## Scripts_Usage
