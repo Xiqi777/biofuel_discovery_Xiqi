@@ -20,14 +20,14 @@ The global energy landscape is changing, with sustainable and renewable energy s
 ## File_Structure
 
 ```bash
-seed_dataset.csv               # The SMILES and Type of biofuels and non-biofuels molecules
+seed_dataset.csv                          # The SMILES and Type of biofuels and non-biofuels molecules
 classifier_Xgboost_fingerprint_biofuel.py # Code for using XGBoost to create a classifier
-CATboost_classifier_biofuel.py # Code for using CATBoost to create a classifier
-XGBoost_outputs/               # Results obtained by running the latest and currently used datasets with XGBoost
-CATBoost_outputs/              # Results obtained by running the latest and currently used datasets with CATBoost
-biomass.csv                    # A large dataset of molecule SMILES derived from biomass
-seed_biofuels_from_Lotus.csv                   # Used to run MOLGAN on Myriad to generate additional potential biofuel molecules
-MOLGAN.py                      # Code for using MOLGAN to create potential biofuel molecules
+CATboost_classifier_biofuel.py            # Code for using CATBoost to create a classifier
+XGBoost_outputs/                          # Results obtained by running the latest and currently used datasets with XGBoost
+CATBoost_outputs/                         # Results obtained by running the latest and currently used datasets with CATBoost
+biomass.csv                               # A large dataset of molecule SMILES derived from biomass
+seed_biofuels_from_Lotus.csv              # Used to run MOLGAN on Myriad to generate additional potential biofuel molecules
+MOLGAN.py                                 # Code for using MOLGAN to create potential biofuel molecules
 ```
 
 ## Project_Steps
