@@ -20,26 +20,26 @@ The global energy landscape is changing, with sustainable and renewable energy s
 ## File_Structure
 
 ```bash
-new datasets.csv               # The SMILES and Type of biofuels and non-biofuels molecules
+seed_dataset.csv               # The SMILES and Type of biofuels and non-biofuels molecules
 classifier_Xgboost_fingerprint_biofuel.py # Code for using XGBoost to create a classifier
 CATboost_classifier_biofuel.py # Code for using CATBoost to create a classifier
 XGBoost_outputs/               # Results obtained by running the latest and currently used datasets with XGBoost
 CATBoost_outputs/              # Results obtained by running the latest and currently used datasets with CATBoost
 biomass.csv                    # A large dataset of molecule SMILES derived from biomass
-biofuels.csv                   # Used to run MOLGAN on Myriad to generate additional potential biofuel molecules
+seed_biofuels_from_Lotus.csv                   # Used to run MOLGAN on Myriad to generate additional potential biofuel molecules
 MOLGAN.py                      # Code for using MOLGAN to create potential biofuel molecules
 ```
 
 ## Project_Steps
 
 1. **Data Collection**
-   - Collect data on biofuel and non-biofuel molecules to build a small dataset containing SMILES strings of biofuels and non-biofuels. The dataset is stored in `new dataset.csv`.
-   - File used: `new dataset.csv`
+   - Collect data on biofuel and non-biofuel molecules to build a small dataset containing SMILES strings of biofuels and non-biofuels. The dataset is stored in `seed_dataset.csv`.
+   - File used: `seed_dataset.csv`
 
 2. **Classifier Development**
    - Use XGBoost and CATBoost to run the scripts `classifier_Xgboost_fingerprint_biofuel.py` and `CATboost_classifier_biofuel.py` to gain the fingerprints of molecules in `new dataset.csv`, and create classifiers that can differentiate between biofuels and non-biofuels.
    - Files used: `classifier_Xgboost_fingerprint_biofuel.py`, `CATboost_classifier_biofuel.py`
-   - Input: `new dataset.csv`
+   - Input: `seed_dataset.csv`
    - Output: `XGBoost_outputs/`, `CATBoost_outputs/`
 
 3. **Classification of Large Biomass Dataset**
@@ -49,15 +49,15 @@ MOLGAN.py                      # Code for using MOLGAN to create potential biofu
    - Output: SMILES of biofuel molecules extracted from `biomass.csv`
 
 4. **Creating a Biofuel Dataset**
-   - Combine the biofuel SMILES from `new datasets.csv` and the SMILES extracted in step 4 to create a biofuel database named `biofuels.csv`, which will be provided to MOLGAN.
+   - Combine the biofuel SMILES from `new datasets.csv` and the SMILES extracted in step 4 to create a biofuel database named `seed_biofuels_from_Lotus.csv`, which will be provided to MOLGAN.
    - Files used: Data from previous steps
    - Input: The SMILES of biofuel molecules from step 1 and step 4
-   - Output: `biofuels.csv`
+   - Output: `seed_biofuels_from_Lotus.csv`
 
 5. **Generation of Novel Biofuel Molecules**
-   - Run `MOLGAN.py` on Myriad to generate more potential novel biofuel molecules using the biofuel database `biofuels.csv`.
+   - Run `MOLGAN.py` on Myriad to generate more potential novel biofuel molecules using the biofuel database `seed_biofuels_from_Lotus.csv`.
    - File used: `MOLGAN.py`
-   - Input: `biofuels.csv`, `MOLGAN.py`
+   - Input: `seed_biofuels_from_Lotus.csv`, `MOLGAN.py`
    - Output: Generated biofuel molecules
 
 6. **Integration and Iteration**
