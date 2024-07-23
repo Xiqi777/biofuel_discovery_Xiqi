@@ -58,7 +58,7 @@ def iterbatches(epochs):
 
 gan.fit_gan(iterbatches(25), generator_steps=0.2, checkpoint_interval=5000)
 start_time = time.time()
-generated_data = gan.predict_gan_generator(10000)
+generated_data = gan.predict_gan_generator(15000)
 end_time = time.time()
 print_time(start_time, end_time, "Generating data")
 
