@@ -751,7 +751,7 @@ def main():
     print("Reading dataset...")
     df = read_data(csv_file)
     print("Reading external dataset...")
-    lotus_csv = "..\\Dataset\\Lotus_dataset.csv"
+    lotus_csv = "Lotus_dataset_mini.csv"
     lotus_and_generated_smiles = pd.read_csv(lotus_csv)
     print("Starting classifier core function...")
     biofuel_smiles = classifier_core(df, lotus_and_generated_smiles, perform_hyperparameter_optimization, optimization_method,

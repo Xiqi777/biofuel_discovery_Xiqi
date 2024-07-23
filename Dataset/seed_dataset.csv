@@ -1,4 +1,4 @@
-Molecule,SMILES,Type
+Molecule,Smile,Type
 Ethanol,CCO,biofuel
 2-Butanone,CCC(=O)C,biofuel
 Ethyl acetate,CCOC(=O)C,biofuel
